@@ -3,194 +3,377 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Kevin Chan — Machine learning systems, NTU</title>
-<meta name="description" content="Kevin Chan builds machine learning systems and validates them against human-annotated ground truth. Mathematical and Computer Sciences at NTU, Singapore.">
-<meta property="og:title" content="Kevin Chan — Machine learning systems, NTU">
+<title>Kevin Chan — Machine learning engineer, NTU Singapore</title>
+<meta name="description" content="Kevin Chan builds machine learning systems and validates them against human-annotated ground truth. Mathematical and Computer Sciences at NTU. Looking for data science, ML and applied AI internships in Singapore.">
+<meta property="og:title" content="Kevin Chan — Machine learning engineer, NTU Singapore">
 <meta property="og:description" content="I build machine learning systems, then try to prove they're wrong.">
-<meta property="og:type" content="website">
+<meta property="og:type" content="profile">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;800&family=JetBrains+Mono:wght@400;500&display=swap">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<a class="skip" href="#main">Skip to content</a>
+<a class="skip" href="#main">skip to content</a>
 
 <header class="topbar">
   <nav aria-label="Sections">
-    <a class="wordmark" href="#top">KC</a>
+    <a class="wordmark" href="#top">kevin chan<span class="dot" aria-hidden="true">◆</span></a>
     <ul>
-      <li><a href="#work">Work</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#work">work</a></li>
+      <li><a href="#process">process</a></li>
+      <li><a href="#skills">skills</a></li>
+      <li><a href="#about">about</a></li>
+      <li><a href="#contact">contact</a></li>
     </ul>
+    <a class="pill pill-ghost nav-cv" href="Kevin-Chan-CV.pdf">cv<span aria-hidden="true"> ↗</span></a>
   </nav>
 </header>
 
 <main id="main">
 
+<!-- ══════════════ INTRO ══════════════ -->
 <section id="top" class="hero">
-  <h1>Kevin&nbsp;Chan.</h1>
-  <p class="thesis">I build machine learning systems, then try to prove they&rsquo;re wrong.</p>
+  <p class="eyebrow">Singapore · NTU Mathematical &amp; Computer Sciences</p>
+  <h1>hi, i'm kevin.<br><span class="muted-h1">i build machine learning systems, then try to prove they're wrong.</span></h1>
   <div class="lede">
-    <p>At MINDEF I benchmarked a sentiment classifier against a 217-row human-annotated gold set and three baseline models before I was willing to put a number on it. Two of the things I&rsquo;ve built are live, and used by people who aren&rsquo;t me.</p>
-    <p>Mathematical and Computer Sciences at NTU Singapore, graduating 2028.</p>
+    <p>I'm a Mathematical and Computer Sciences undergraduate at NTU Singapore, graduating 2028. I spent last summer at MINDEF turning 13.6&nbsp;million Reddit records into a sentiment pipeline that could actually be trusted — because I hand-annotated the gold set it was measured against before I trained anything on it.</p>
+    <p>Most of my work sits where statistics meets shipped software: models that emit probabilities, systems that survive the failure cases, and numbers I can defend when someone asks where they came from.</p>
+    <p><b>What I'm looking for:</b> data science, machine learning and applied&nbsp;AI internships in Singapore — the kind where I own a problem end to end rather than a ticket at a time.</p>
   </div>
   <p class="hero-links">
-    <a class="cta" href="#work">Selected work</a>
-    <a class="cta" href="https://github.com/kevinn-chan" rel="me noopener">GitHub<span aria-hidden="true"> ↗</span></a>
+    <a class="pill pill-solid" href="#work">see my work<span aria-hidden="true"> ↓</span></a>
+    <a class="pill pill-ghost" href="Kevin-Chan-CV.pdf">download cv<span aria-hidden="true"> ↗</span></a>
   </p>
 </section>
 
-<!-- ───────────────────────── WORK ───────────────────────── -->
-<section id="work" class="band">
-  <div class="band-label"><span class="num">01</span><span class="rule" aria-hidden="true"></span><h2>Selected work</h2></div>
+<!-- ══════════════ WORK ══════════════ -->
+<section id="work" class="band sunk">
+  <div class="inner">
+    <header class="band-head">
+      <h2>selected work</h2>
+      <p class="band-note">Six projects, each written up the same way: the problem, how I thought about it, what came out, and what I'd do differently. Not a gallery — the reasoning is the point.</p>
+    </header>
 
-  <div class="band-body">
+    <!-- 1 -->
+    <article class="proj">
+      <div class="proj-head">
+        <span class="idx" aria-hidden="true">01</span>
+        <div>
+          <h3>National Service Sentiment Analysis</h3>
+          <p class="proj-sub">Built during a 10-week Data Science (NLP) internship at MINDEF Singapore · May — Jul 2026</p>
+        </div>
+      </div>
+      <p class="proj-desc">A nine-stage NLP pipeline and seven-page dashboard measuring how Singaporeans actually talk about National Service, plus a retrieval chatbot that answers questions over the whole corpus.</p>
+      <dl class="story">
+        <dt>the problem</dt>
+        <dd>The department wanted to understand public sentiment on NS at a scale no one could read manually. Reddit had years of it — but 13.6M unstructured records written in Singlish and code-switched English, where off-the-shelf sentiment tools score badly and nobody could say <em>how</em> badly.</dd>
 
-    <article class="deep">
-      <header>
-        <h3><a href="https://kevinknowsball.vercel.app" rel="noopener">Joga Bonito<span aria-hidden="true"> ↗</span></a></h3>
-        <p class="tags"><span class="live">Live</span> <span>Next.js</span> <span>FastAPI</span> <span>scikit-learn</span></p>
-      </header>
-      <p>A World Cup 2026 prediction engine — full 48-team bracket simulation, individual match predictions, squad exploration.</p>
-      <p>The classifier is a scikit-learn histogram gradient-boosting model trained on 49,214 international matches with four-year half-life time decay, emitting Poisson scoring rates rather than a bare win probability. An 18-feature squad-quality layer — squad value, elite-league share, tactical entropy, star-reliance measured as a Gini coefficient — is applied at inference rather than during training, because historical squad data simply doesn&rsquo;t reach back far enough to learn from. Dixon-Coles calibration corrects the low-scoring outcomes Poisson gets wrong, and neutral-ground symmetrisation strips home-team bias by averaging each prediction with its reverse. Brackets resolve through 10,000 Monte Carlo simulations.</p>
-      <ul class="metrics">
-        <li><b>49,214</b><span>matches trained on</span></li>
-        <li><b>20</b><span>player archetypes</span></li>
-        <li><b>10,000</b><span>bracket simulations</span></li>
-      </ul>
-      <p class="src"><a href="https://github.com/kevinn-chan/kevinknowsball" rel="noopener">Source<span aria-hidden="true"> ↗</span></a></p>
+        <dt>how i approached it</dt>
+        <dd>I started by distrusting the metric. Instead of training a classifier and reporting held-out accuracy, I hand-annotated a 217-row gold set first, then made four approaches prove themselves against it — VADER, a generic BERT, zero-shot GPT-4.1-mini, and a fine-tuned SingBERT that handles Singlish. Only the winner got used. The pipeline in front of it follows the same logic: semantic chunking <em>before</em> topic modelling, so UMAP and HDBSCAN cluster units of meaning rather than whole threads.</dd>
+
+        <dt>tools</dt>
+        <dd class="stack"><span>Python</span><span>PyTorch</span><span>HuggingFace</span><span>SingBERT</span><span>spaCy</span><span>UMAP</span><span>HDBSCAN</span><span>FAISS</span><span>Streamlit</span><span>Groq</span></dd>
+
+        <dt>result</dt>
+        <dd>84% accuracy at κ&nbsp;=&nbsp;0.71 and macro F1 0.78, against baselines of κ&nbsp;=&nbsp;0.31 (VADER), 0.52 (generic BERT) and 0.68 (GPT-4.1-mini). 13.6M records reduced to 737K structured units and a 359-topic taxonomy. The chatbot routes quantitative questions to a pre-aggregated fact table and answers in under 100ms without calling a model at all.</dd>
+
+        <dt>what i learned</dt>
+        <dd>The expensive part of an ML project isn't training — it's building the thing you measure against. The gold set took days and was the only reason any accuracy figure meant anything. I also learned when <em>not</em> to call a model: routing stats questions to a lookup table made the chatbot faster and more honest at the same time.</dd>
+      </dl>
+      <p class="proj-links"><a href="https://github.com/kevinn-chan/NS-Sentiment-Analysis-NLP">repository<span aria-hidden="true"> ↗</span></a></p>
     </article>
 
-    <article class="deep">
-      <header>
-        <h3><a href="https://valedictorian-run.vercel.app" rel="noopener">Valedictorian Run<span aria-hidden="true"> ↗</span></a></h3>
-        <p class="tags"><span class="live">Live</span> <span>Next.js 16</span> <span>TypeScript</span> <span>Supabase</span></p>
-      </header>
-      <p>A study platform that turns course PDFs into topic wikis, spaced-repetition cards, mock exams, teach-back grading and grounded Q&amp;A with page-level citations.</p>
-      <p>It has no vector database, on purpose. The model reads each uploaded file once at ingest, extracting page-cited chunks and building a topic index; the corpus then stays in context at query time, with Postgres <code>tsvector</code> ranking as a fallback only when the window overflows. For a bounded personal corpus that removes retrieval drift and relevance tuning entirely. Figures are pulled out with mupdf, rasterised with sharp and linked back to topics, so the chat can read a diagram and still cite the page it came from.</p>
-      <ul class="metrics">
-        <li><b>Page-level</b><span>citations on every answer</span></li>
-        <li><b>No vector DB</b><span>compile-on-ingest instead</span></li>
-        <li><b>$0</b><span>monthly running cost</span></li>
-      </ul>
-      <p class="src"><a href="https://github.com/kevinn-chan/Valedictorian-Run-Demo" rel="noopener">Source<span aria-hidden="true"> ↗</span></a></p>
+    <!-- 2 -->
+    <article class="proj">
+      <div class="proj-head">
+        <span class="idx" aria-hidden="true">02</span>
+        <div>
+          <h3>Joga Bonito <span class="badge">live</span></h3>
+          <p class="proj-sub">World Cup 2026 prediction engine · used by public visitors</p>
+        </div>
+      </div>
+      <p class="proj-desc">A full 48-team bracket simulator with match-level predictions and squad exploration, served from a trained model rather than a rules table.</p>
+      <dl class="story">
+        <dt>the problem</dt>
+        <dd>Most football models output a single win probability, which tells you nothing about <em>how</em> a match goes. They're also systematically biased toward home teams — a real problem at a World Cup where most fixtures are on neutral ground.</dd>
+
+        <dt>how i approached it</dt>
+        <dd>I modelled scoring rates instead of outcomes, so the classifier emits Poisson λ values you can simulate scorelines from. Two corrections came out of being honest about the data rather than clever with the model: squad quality is a strong signal but historical squad data doesn't reach far enough back to train on, so the 18-feature squad layer is applied at <em>inference</em>; and since home bias is measurable, every neutral-ground prediction is averaged with its own reversed fixture. Dixon-Coles calibration then fixes the low-scoring games Poisson reliably gets wrong.</dd>
+
+        <dt>tools</dt>
+        <dd class="stack"><span>Python</span><span>scikit-learn</span><span>FastAPI</span><span>Next.js 14</span><span>Vercel</span><span>Render</span></dd>
+
+        <dt>result</dt>
+        <dd>Trained on 49,214 international matches with four-year half-life decay. Two-stage K-means groups players into 20 archetypal roles. Brackets resolve across 10,000 Monte Carlo simulations. Live in production, with 2,256 matchups precomputed at startup to hide a free-tier cold start.</dd>
+
+        <dt>what i learned</dt>
+        <dd><em>Where</em> you put a feature matters as much as whether you include it — moving squad quality out of training and into inference was the difference between a signal I couldn't use and one I could. And that engineering around a 30-second cold start was cheaper than paying to remove it.</dd>
+      </dl>
+      <p class="proj-links"><a href="https://kevinknowsball.vercel.app">live site<span aria-hidden="true"> ↗</span></a><a href="https://github.com/kevinn-chan/kevinknowsball">repository<span aria-hidden="true"> ↗</span></a></p>
     </article>
 
-    <h4 class="sub">Also built</h4>
-    <ol class="brief">
-
-      <li>
-        <div class="brief-head">
-          <h3>Context Aware Risk Engine</h3>
-          <span class="when">Feb — Mar 2026</span>
+    <!-- 3 -->
+    <article class="proj">
+      <div class="proj-head">
+        <span class="idx" aria-hidden="true">03</span>
+        <div>
+          <h3>Valedictorian Run <span class="badge">live</span></h3>
+          <p class="proj-sub">Study platform with cited answers · live on Vercel</p>
         </div>
-        <p>Traffic-accident detection that quantifies environmental risk instead of trusting object detection alone. Zero-shot CLIP with engineered semantic anchors reads what a scene <em>means</em> rather than what is in it; 10,000 Monte Carlo runs set a Value-at-Risk baseline; Bayesian fusion and persistence gating hold back the false positives that cause alarm fatigue.</p>
-        <p class="tags"><span>Python</span> <span>PyTorch</span> <span>CLIP</span> <span>Streamlit</span> <span class="wip">Prototype</span> <a href="https://github.com/kevinn-chan/CARE" rel="noopener">Source<span aria-hidden="true"> ↗</span></a></p>
-      </li>
+      </div>
+      <p class="proj-desc">Upload a semester of course PDFs and get topic wikis, spaced-repetition cards, mock exams, teach-back grading and Q&amp;A where every answer cites the page it came from.</p>
+      <dl class="story">
+        <dt>the problem</dt>
+        <dd>Tools that run RAG over your own notes drift. The retriever returns the wrong chunk, you tune relevance thresholds indefinitely, and the answer cites nothing you can actually check against the source.</dd>
 
-      <li>
-        <div class="brief-head">
-          <h3>Bobina</h3>
-          <span class="when">Voice agent</span>
+        <dt>how i approached it</dt>
+        <dd>I asked whether the retrieval step needed to exist at all. One student's notes for one semester is a bounded corpus — small enough to sit in context. So instead of embedding and searching, the model reads each file once at ingest, extracts page-cited chunks and builds a topic index; Postgres full-text ranking is a fallback for when the window overflows, not the main path. Figures are extracted with mupdf and linked to topics, so the chat can read a diagram and still cite its page.</dd>
+
+        <dt>tools</dt>
+        <dd class="stack"><span>Next.js 16</span><span>TypeScript</span><span>Supabase</span><span>PostgreSQL</span><span>Tailwind</span><span>Vercel AI SDK</span><span>mupdf</span></dd>
+
+        <dt>result</dt>
+        <dd>Page-level citations on every answer, no vector database and no relevance tuning. Row-level security isolates each user's material. Cross-session search, image occlusion, SM-2 spaced repetition and Anki export. Runs at $0/month on free tiers.</dd>
+
+        <dt>what i learned</dt>
+        <dd>The default architecture isn't always the right one. RAG is the reflex answer to "chat with your documents", but for a bounded corpus it bought drift and tuning work in exchange for nothing. Deciding to <em>remove</em> a component is a design decision worth defending in the same way as adding one.</dd>
+      </dl>
+      <p class="proj-links"><a href="https://valedictorian-run.vercel.app">live site<span aria-hidden="true"> ↗</span></a><a href="https://github.com/kevinn-chan/Valedictorian-Run-Demo">repository<span aria-hidden="true"> ↗</span></a></p>
+    </article>
+
+    <!-- 4 -->
+    <article class="proj">
+      <div class="proj-head">
+        <span class="idx" aria-hidden="true">04</span>
+        <div>
+          <h3>Context Aware Risk Engine <span class="badge badge-quiet">prototype</span></h3>
+          <p class="proj-sub">Traffic accident detection under changing conditions · Feb — Mar 2026</p>
         </div>
-        <p>Conducts sentiment interviews over phone or browser. Whisper-Singlish transcription into Groq Llama&nbsp;3.3&nbsp;70B into Azure Neural speech, on Pipecat, at 0.2–0.9s turn latency. Emotion recognition runs alongside; NRIC, phone and email are scrubbed from transcripts, and consent is verified before an interview is allowed to begin.</p>
-        <p class="tags"><span>Python</span> <span>FastAPI</span> <span>Pipecat</span> <span>Twilio</span> <span class="wip">Prototype</span> <a href="https://github.com/kevinn-chan/ai-questionnaire-caller" rel="noopener">Source<span aria-hidden="true"> ↗</span></a></p>
-      </li>
+      </div>
+      <p class="proj-desc">An accident-detection system that quantifies how risky the current environment is, rather than trusting an object detector to decide on its own.</p>
+      <dl class="story">
+        <dt>the problem</dt>
+        <dd>Detection-only systems alarm constantly in rain, fog and heavy traffic. Operators stop trusting them — alarm fatigue — and by the time a real incident happens, nobody's watching.</dd>
 
-      <li>
-        <div class="brief-head">
-          <h3>DSTA BrainHack TIL-AI</h3>
-          <span class="when">Advanced Track Finalist, 2026</span>
+        <dt>how i approached it</dt>
+        <dd>The core insight was that a fixed confidence threshold can't hold when conditions change, so the threshold has to move. 10,000 Monte Carlo runs establish a Value-at-Risk baseline for the current environment, Bayesian fusion combines that baseline with what the camera reports, and an alert only fires after consecutive breaches instead of a single frame. For perception I used zero-shot CLIP with engineered semantic anchors — "crumpled metal" against "normal traffic" — so it classifies what a scene <em>means</em> rather than counting objects inside it.</dd>
+
+        <dt>tools</dt>
+        <dd class="stack"><span>Python</span><span>PyTorch</span><span>CLIP</span><span>OpenCV</span><span>NumPy</span><span>Streamlit</span></dd>
+
+        <dt>result</dt>
+        <dd>Three automated stress tests in a headless testbench: nominal traffic baseline, false-positive suppression under extreme weather, and crash-detection reliability. A Streamlit dashboard lets you push environmental parameters around and watch the threshold respond. Prototype — validated on the testbench, not deployed.</dd>
+
+        <dt>what i learned</dt>
+        <dd>The cheapest accuracy win is often temporal, not architectural: requiring two consecutive breaches killed more false positives than any model change I tried. I also learned that a demo you can't stress-test is only a demo, which is why the testbench got built before the interface did.</dd>
+      </dl>
+      <p class="proj-links"><a href="https://github.com/kevinn-chan/CARE">repository<span aria-hidden="true"> ↗</span></a></p>
+    </article>
+
+    <!-- 5 -->
+    <article class="proj">
+      <div class="proj-head">
+        <span class="idx" aria-hidden="true">05</span>
+        <div>
+          <h3>Bobina <span class="badge badge-quiet">prototype</span></h3>
+          <p class="proj-sub">Conversational voice agent for sentiment interviews · built at MINDEF</p>
         </div>
-        <p>Six competition tracks with one teammate: a rule-based Bomberman agent taken through sixteen versions to 237.8 average reward, Qwen3 fine-tuned for noisy four-language speech recognition, YOLOv8 over nineteen military classes exported to TensorRT, TF-IDF retrieval QA with unanswerable-question detection, and a checkerboard adversarial perturbation at ε=8 inside SSIM constraints. The finals ran six containers behind a single routing endpoint.</p>
-        <p class="tags"><span>PyTorch</span> <span>YOLOv8</span> <span>Docker</span> <a href="https://github.com/meganchuaa/kteam-TIL_AI-BrainHack-2026" rel="noopener">Source<span aria-hidden="true"> ↗</span></a></p>
-      </li>
+      </div>
+      <p class="proj-desc">A voice agent that conducts structured sentiment interviews over the phone or in a browser, transcribing, analysing and redacting as it goes.</p>
+      <dl class="story">
+        <dt>the problem</dt>
+        <dd>Survey text boxes produce shallow answers. A human interviewer gets depth but doesn't scale, and the recordings then need transcribing and coding by hand. I finished my main internship project with two weeks left and wanted to see whether the depth could be automated without losing the conversation.</dd>
 
-      <li>
-        <div class="brief-head">
-          <h3>University Career Services Portal</h3>
-          <span class="when">Sep — Nov 2025</span>
+        <dt>how i approached it</dt>
+        <dd>I built it as a streaming pipeline rather than a request-response loop, because turn latency is the difference between a voice agent that feels alive and one that feels broken — speech in, Groq for reasoning, Azure Neural streaming back out, orchestrated on Pipecat. The parts that took longest weren't the model: confidence-gated transcription so silence isn't scored as an answer, an idle watchdog that reminds and then hangs up, consent verification before anything is recorded, and NRIC, phone and email scrubbed from every transcript.</dd>
+
+        <dt>tools</dt>
+        <dd class="stack"><span>Python</span><span>FastAPI</span><span>Pipecat</span><span>Whisper</span><span>Groq Llama 3.3</span><span>Azure Neural TTS</span><span>Twilio</span><span>SQLite</span></dd>
+
+        <dt>result</dt>
+        <dd>0.2–0.9s from the end of a caller's sentence to the start of a reply, with ~200–300ms TTS streaming latency. Adaptive follow-ups fire only on strongly-held opinions. Graceful barge-in, automatic language switching, live SSE stream to an admin dashboard. Prototype on a free tier — around ten full interviews a day.</dd>
+
+        <dt>what i learned</dt>
+        <dd>Most of the engineering in a conversational system lives in the failure cases — silence, interruption, someone walking away mid-call. The model was the easy part. I also learned to build the privacy handling first instead of bolting it on, because redacting after the fact means the raw data already exists somewhere.</dd>
+      </dl>
+      <p class="proj-links"><a href="https://github.com/kevinn-chan/ai-questionnaire-caller">repository<span aria-hidden="true"> ↗</span></a></p>
+    </article>
+
+    <!-- 6 -->
+    <article class="proj">
+      <div class="proj-head">
+        <span class="idx" aria-hidden="true">06</span>
+        <div>
+          <h3>DSTA BrainHack TIL-AI <span class="badge">finalist</span></h3>
+          <p class="proj-sub">Six AI challenge tracks, two people · Advanced Track Finalist, 2026</p>
         </div>
-        <p>A university careers portal built as a Java command-line application. Role-based access control separates student, staff and admin permissions; profile and listing hierarchies are structured along SOLID lines; persistence is plain CSV file handling rather than a database, which keeps the whole thing runnable from a clean checkout.</p>
-        <p class="tags"><span>Java</span> <span>OOP</span> <span class="wip">Coursework</span> <a href="https://github.com/kevinn-chan/Uni-Career-Portal" rel="noopener">Source<span aria-hidden="true"> ↗</span></a></p>
-      </li>
+      </div>
+      <p class="proj-desc">A national AI competition spanning gameplay agents, multilingual speech recognition, object detection, retrieval QA, adversarial attack and strategy — all under a hard compute budget.</p>
+      <dl class="story">
+        <dt>the problem</dt>
+        <dd>Six unrelated problems, one teammate, a finals deadline, and constraints of one CPU and 1GiB RAM with under ten seconds per turn. Breadth was the actual challenge — any one track could have absorbed the whole timeline.</dd>
 
+        <dt>how i approached it</dt>
+        <dd>We split by track and iterated instead of designing up front. The gameplay agent went through sixteen numbered versions, each one a specific hypothesis about what was costing us reward — base rush, then phased, then offence-only, then the staged assault that finally worked. Keeping them as separate versions rather than edits to one file meant I could attribute every improvement to a cause. For the finals we put all five models behind a single routing endpoint on Docker Compose, so a submission was one HTTP call instead of five.</dd>
+
+        <dt>tools</dt>
+        <dd class="stack"><span>PyTorch</span><span>Qwen3</span><span>YOLOv8</span><span>TensorRT</span><span>ONNX</span><span>Docker Compose</span><span>PettingZoo</span></dd>
+
+        <dt>result</dt>
+        <dd>Advanced Track Finalist. The gameplay agent reached 237.8 average reward, 7.4% above the v4 baseline. YOLOv8 fine-tuned across 19 military classes and exported to TensorRT at FP16. A checkerboard adversarial perturbation at ε=8 that stayed inside the SSIM constraint.</dd>
+
+        <dt>what i learned</dt>
+        <dd>Sixteen versions of one agent taught me more than any single clever idea would have. Disciplined versioning turns iteration into evidence — without it you improve a score and never know which change did it.</dd>
+      </dl>
+      <p class="proj-links"><a href="https://github.com/meganchuaa/kteam-TIL_AI-BrainHack-2026">repository<span aria-hidden="true"> ↗</span></a></p>
+    </article>
+
+  </div>
+</section>
+
+<!-- ══════════════ PROCESS ══════════════ -->
+<section id="process" class="band">
+  <div class="inner">
+    <header class="band-head">
+      <h2>how i work</h2>
+      <p class="band-note">If there's one thing I'd want to be judged on, it's this. The projects change; the method doesn't.</p>
+    </header>
+
+    <ol class="process">
       <li>
-        <div class="brief-head">
-          <h3>Restock Tracker</h3>
-          <span class="when">Utility</span>
-        </div>
-        <p>A headless Selenium watcher that polls product pages and pushes a Telegram message the moment stock returns. It re-initialises its own browser session when the driver crashes or times out, waits on explicit conditions rather than sleeping, and keeps its bot token in the environment instead of the source.</p>
-        <p class="tags"><span>Python</span> <span>Selenium</span> <span>asyncio</span> <a href="https://github.com/kevinn-chan/Restock-Tracker" rel="noopener">Source<span aria-hidden="true"> ↗</span></a></p>
+        <span class="step" aria-hidden="true">01</span>
+        <h3>research — decide what would convince you, first</h3>
+        <p>Before I build anything I write down what I'd have to see to believe it worked, and what a fair baseline looks like. That ordering matters: choose the metric after the results and you'll pick the flattering one. On the NS project it meant hand-annotating 217 examples and benchmarking four approaches against them before committing to one. The gold set cost days and made every number afterwards defensible.</p>
       </li>
-
+      <li>
+        <span class="step" aria-hidden="true">02</span>
+        <h3>build — thinnest end-to-end path, then attack the weakest stage</h3>
+        <p>I'd rather have an ugly pipeline where all nine stages run than three perfect ones and a gap. Once it runs end to end, the bottleneck tells you where to spend time instead of you guessing. Then I look for components that can be <em>deleted</em> rather than optimised — Valedictorian Run has no vector database and the NS chatbot's query router makes no model call, both because the version without them was simpler and measurably better.</p>
+      </li>
+      <li>
+        <span class="step" aria-hidden="true">03</span>
+        <h3>feedback — keep versions, not tweaks; find the failure before a user does</h3>
+        <p>Every significant change becomes a numbered version with a stated hypothesis, so an improvement can be traced to a cause. Sixteen versions of the BrainHack agent is what turned iteration into evidence. In parallel I build the thing that tries to break it early: CARE's stress testbench and Bobina's idle-then-hang-up handling both existed before either project had a usable interface.</p>
+      </li>
     </ol>
   </div>
 </section>
 
-<!-- ───────────────────────── EXPERIENCE ───────────────────────── -->
-<section id="experience" class="band">
-  <div class="band-label"><span class="num">02</span><span class="rule" aria-hidden="true"></span><h2>Experience</h2></div>
+<!-- ══════════════ SKILLS ══════════════ -->
+<section id="skills" class="band sunk">
+  <div class="inner">
+    <header class="band-head">
+      <h2>skills</h2>
+      <p class="band-note">Everything here appears in a shipped project on this page — nothing listed from a tutorial.</p>
+    </header>
 
-  <div class="band-body">
-    <article class="deep">
-      <header>
-        <h3>Data Science (NLP) Intern</h3>
-        <p class="org">Ministry of Defence, Singapore <span class="when">May — Jul 2026</span></p>
-      </header>
-      <p>Built a nine-stage pipeline over 2.1GB of compressed Reddit archives, taking 13.6M raw records down to 737K semantically chunked units and clustering them — UMAP to five dimensions, then HDBSCAN, then c-TF-IDF — into a 359-topic taxonomy I rolled up by hand into 17 macro topics.</p>
-      <p>Fine-tuned SingBERT, a Singapore-specific model that survives Singlish and code-switching, for sentiment classification. Evaluated against a 217-row human-annotated gold set it reached 84% accuracy at κ&nbsp;=&nbsp;0.71 and macro F1 0.78, beating VADER (κ&nbsp;=&nbsp;0.31), generic BERT (κ&nbsp;=&nbsp;0.52) and zero-shot GPT-4.1-mini (κ&nbsp;=&nbsp;0.68). A separate four-stage cascade classified commitment along two axes against a 727-row gold set.</p>
-      <p>Shipped a seven-page Streamlit dashboard and a retrieval chatbot over a FAISS index of all 737K chunk embeddings. A rule-based query router — no model call, under five milliseconds — decides whether a question is quantitative, and if it is, answers from a pre-aggregated fact table in under 100ms rather than paying for an LLM round trip.</p>
-      <ul class="metrics">
-        <li><b>13.6M → 737K</b><span>records structured</span></li>
-        <li><b>κ = 0.71</b><span>vs. human gold set</span></li>
-        <li><b>&lt;100ms</b><span>routed query latency</span></li>
-      </ul>
-      <p class="src"><a href="https://github.com/kevinn-chan/NS-Sentiment-Analysis-NLP" rel="noopener">Public repository<span aria-hidden="true"> ↗</span></a></p>
-    </article>
+    <div class="skills">
+      <div class="skillgroup">
+        <h3>languages</h3>
+        <ul><li>Python</li><li>TypeScript</li><li>JavaScript</li><li>Java</li><li>SQL</li></ul>
+      </div>
+      <div class="skillgroup">
+        <h3>machine learning</h3>
+        <ul><li>PyTorch</li><li>scikit-learn</li><li>HuggingFace Transformers</li><li>BERT fine-tuning</li><li>CLIP</li><li>YOLOv8</li><li>UMAP</li><li>HDBSCAN</li><li>K-means</li></ul>
+      </div>
+      <div class="skillgroup">
+        <h3>data &amp; retrieval</h3>
+        <ul><li>pandas</li><li>NumPy</li><li>FAISS</li><li>Parquet</li><li>PostgreSQL</li><li>Supabase</li><li>SQLite</li><li>spaCy</li></ul>
+      </div>
+      <div class="skillgroup">
+        <h3>web &amp; deployment</h3>
+        <ul><li>Next.js</li><li>React</li><li>FastAPI</li><li>Streamlit</li><li>Tailwind</li><li>Docker</li><li>Vercel</li><li>Render</li></ul>
+      </div>
+      <div class="skillgroup wide">
+        <h3>methods i actually use</h3>
+        <ul>
+          <li>Gold-set evaluation</li><li>Baseline benchmarking</li><li>Inter-annotator agreement (κ)</li>
+          <li>Monte Carlo simulation</li><li>Bayesian fusion</li><li>Poisson &amp; Dixon-Coles modelling</li>
+          <li>Topic modelling</li><li>Semantic chunking</li><li>RAG architecture</li>
+          <li>Fuzzy entity resolution</li><li>Adversarial perturbation</li><li>PII redaction</li>
+        </ul>
+      </div>
+    </div>
 
-    <h4 class="sub">Education</h4>
-    <ol class="brief">
-      <li>
-        <div class="brief-head">
-          <h3>Nanyang Technological University</h3>
-          <span class="when">Aug 2024 — May 2028</span>
-        </div>
-        <p>BSc (Honours, Distinction) in Mathematical and Computer Sciences — a double major across mathematics and computing.</p>
-        <p class="tags"><span>Machine Learning</span> <span>Statistics</span> <span>Regression Analysis</span> <span>Data Science &amp; AI</span> <span>Databases</span></p>
-      </li>
-    </ol>
+    <div class="strengths">
+      <h3 class="sub">where i'm strongest</h3>
+      <div class="strength-grid">
+        <div><b>Evaluation design</b><p>Building the ground truth a model gets measured against, and choosing baselines that make the result mean something.</p></div>
+        <div><b>End-to-end pipelines</b><p>Taking raw, messy, large data through cleaning, structuring and modelling to something a non-technical person can use.</p></div>
+        <div><b>Knowing what to cut</b><p>Recognising when the standard component — a vector DB, an LLM call, a heavier model — isn't earning its place.</p></div>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- ───────────────────────── ABOUT + CONTACT ───────────────────────── -->
-<section id="about" class="band">
-  <div class="band-label"><span class="num">03</span><span class="rule" aria-hidden="true"></span><h2>About</h2></div>
-  <div class="band-body">
-    <div class="prose">
-      <p>Most of what I enjoy about this work happens after the model trains. Anyone can report an accuracy figure; the interesting question is what it was measured against, and whether a simpler baseline would have done just as well. That habit is why the MINDEF classifier was benchmarked against three alternatives on annotated data instead of a held-out split, and why Valedictorian Run has no vector database — I couldn&rsquo;t justify one for a corpus that fits in context.</p>
-      <p>I&rsquo;m looking for data science, machine learning and applied AI internships in Singapore.</p>
-    </div>
+<!-- ══════════════ TESTIMONIAL ══════════════ -->
+<section id="testimonial" class="band">
+  <div class="inner narrow">
+    <h2 class="sr-head">what my supervisor said</h2>
+    <figure class="quote">
+      <blockquote>
+        <p>“When the model was not performing the way he wanted, he would go away, dig into the problem himself, and come back with a considered approach rather than just asking to be told what to do. <b>That kind of self-directed problem solving is genuinely rare, especially at the intern level.</b>”</p>
+        <p>“He completed all of this with two weeks of the internship still to go. Rather than coast, he used that time to build a proof-of-concept for an AI voice calling agent — a completely different technical domain that he picked up and ran with on his own initiative.”</p>
+        <p>“Kevin is the kind of person who makes work easier for the people around him, because you can trust him to own a problem fully. <b>I would work with him again without hesitation.</b>”</p>
+      </blockquote>
+      <figcaption>
+        <span class="cite-name">Justin Ong</span>
+        <span class="cite-role">Assistant Director, Plans &amp; Innovation Group<br>Defence Psychology Department, MINDEF Singapore</span>
+      </figcaption>
+    </figure>
+  </div>
+</section>
 
-    <div id="contact" class="contact">
-      <h4 class="sub">Contact</h4>
-      <ul class="links">
-        <li><span class="k">Email</span><a id="mail" href="#">&nbsp;</a></li>
-        <li><span class="k">LinkedIn</span><a href="https://www.linkedin.com/in/kevin-chan-kang-le" rel="me noopener">kevin-chan-kang-le<span aria-hidden="true"> ↗</span></a></li>
-        <li><span class="k">GitHub</span><a href="https://github.com/kevinn-chan" rel="me noopener">kevinn-chan<span aria-hidden="true"> ↗</span></a></li>
-      </ul>
-    </div>
+<!-- ══════════════ ABOUT ══════════════ -->
+<section id="about" class="band sunk">
+  <div class="inner narrow">
+    <h2>about me</h2>
+    <p>I'm reading Mathematical and Computer Sciences at NTU Singapore — a double major across mathematics and computing — graduating in 2028 with Honours (Distinction). Coursework that's actually shown up in my work: Machine Learning, Statistics, Regression Analysis, Introduction to Data Science &amp; AI, and Databases.</p>
+    <p>The thing I enjoy most happens after the model trains. Anyone can report an accuracy figure; the interesting question is what it was measured against, and whether something simpler would have done just as well. That instinct is why the MINDEF classifier was benchmarked against three alternatives on annotated data instead of a held-out split, and why I took the vector database out of a project that everyone would tell you needs one.</p>
+    <p>Outside that, I'm usually building something that didn't need to exist — a football model because I wanted to argue with friends using numbers, a study tool because revision week was going badly.</p>
+  </div>
+</section>
+
+<!-- ══════════════ CONTACT ══════════════ -->
+<section id="contact" class="band">
+  <div class="inner narrow">
+    <h2>get in touch</h2>
+    <p class="band-note">Open to data science, ML and applied AI internships in Singapore — and always happy to talk about evaluation design, or why your RAG pipeline might not need to be a RAG pipeline.</p>
+
+    <ul class="contacts">
+      <li>
+        <a id="mail" href="#">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v.4l-10 5.6L2 5.4V5Zm0 2.7V19a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7.7l-9.5 5.3a1 1 0 0 1-1 0L2 7.7Z"/></svg>
+          <span class="c-label">email</span>
+          <span class="c-value">&nbsp;</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://www.linkedin.com/in/kevin-chan-kang-le" rel="me noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
+          <span class="c-label">linkedin</span>
+          <span class="c-value">kevin-chan-kang-le<span aria-hidden="true"> ↗</span></span>
+        </a>
+      </li>
+      <li>
+        <a href="https://github.com/kevinn-chan" rel="me noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+          <span class="c-label">github</span>
+          <span class="c-value">kevinn-chan<span aria-hidden="true"> ↗</span></span>
+        </a>
+      </li>
+    </ul>
+
+    <p class="cv-line"><a class="pill pill-solid" href="Kevin-Chan-CV.pdf">download my cv<span aria-hidden="true"> ↗</span></a></p>
   </div>
 </section>
 
 </main>
 
 <footer>
-  <p>Singapore. Built by hand — <a href="https://github.com/kevinn-chan/kevinn-chan.github.io" rel="noopener">source</a>.</p>
+  <p>kevin chan · singapore · <span id="year">2026</span></p>
 </footer>
 
 <script src="main.js"></script>
