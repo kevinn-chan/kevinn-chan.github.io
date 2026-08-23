@@ -273,6 +273,17 @@ h2 { font-size: clamp(1.9rem, 5vw, 3rem); margin-bottom: .7rem; }
 figcaption { padding-left: clamp(1rem, 3vw, 2rem); }
 .cite-name { display: block; font-weight: 700; }
 .cite-role { display: block; font-family: var(--mono); font-size: .72rem; line-height: 1.6; color: var(--muted); margin-top: .3rem; }
+.letter-link {
+  display: inline-flex; align-items: center; gap: .5rem;
+  margin-top: 1rem; padding: .6rem 1rem;
+  font-family: var(--mono); font-size: .72rem; font-weight: 500;
+  letter-spacing: .06em; text-transform: uppercase;
+  text-decoration: none; color: var(--ink);
+  border: 1.5px solid var(--rule); border-radius: var(--radius);
+  transition: border-color .18s ease, color .18s ease;
+}
+.letter-link svg { width: 1rem; height: 1rem; fill: var(--accent); flex: none; }
+.letter-link:hover { border-color: var(--accent); color: var(--accent); }
 
 /* ── about ───────────────────────────────────────────────── */
 
@@ -322,11 +333,35 @@ footer p {
   .step { font-size: 1.1rem; }
 }
 @media (max-width: 720px) {
-  .topbar ul { display: none; }
-  .topbar nav { justify-content: space-between; }
-  .topbar ul { margin: 0; }
+  /* Nav wraps to its own scrollable strip rather than vanishing behind a
+     hamburger. ponytail: overflow-x beats a menu component. */
+  .topbar nav { flex-wrap: wrap; row-gap: .45rem; gap: .75rem; }
+  .topbar ul {
+    order: 3; width: 100%; margin: 0; gap: 1.1rem;
+    overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch;
+  }
+  .topbar ul::-webkit-scrollbar { display: none; }
+  .topbar ul a { white-space: nowrap; padding: .3rem 0 .35rem; }
+  .nav-cv { margin-left: auto; }
+  .wordmark { padding: .5rem 0; }
+
+  /* nothing user-facing below 12px on a phone */
+  .stack span, .proj-sub, .c-label, .cite-role, .eyebrow, footer p,
+  .story dt, .skillgroup h3, .sub, .proj-links a, .letter-link { font-size: .75rem; }
+  .c-value { font-size: .82rem; }
+  .badge { font-size: .75rem; }
+
+  /* 44px tap targets */
+  .pill { padding: .78rem 1.35rem; }
+  .topbar ul a { padding: .75rem 0; }
+  .proj-links { gap: 1rem; }
+  .proj-links a { padding: .75rem 0; }
+  .letter-link { padding: .75rem 1.1rem; }
+  .contacts a { padding: 1.15rem .25rem; }
+  .skillgroup li { padding: .45rem .8rem; }
+
   .proj-head { gap: .7rem; }
-  .contacts a { grid-template-columns: 1.4rem minmax(0, 1fr); row-gap: .1rem; }
+  .contacts a { grid-template-columns: 1.4rem minmax(0, 1fr); row-gap: .15rem; }
   .contacts .c-label { grid-column: 2; }
   .contacts .c-value { grid-column: 2; }
 }
