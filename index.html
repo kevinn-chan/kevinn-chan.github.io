@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kevin Chan — Machine learning systems, NTU</title>
+<meta name="description" content="Kevin Chan builds machine learning systems and validates them against human-annotated ground truth. Mathematical and Computer Sciences at NTU, Singapore.">
+<meta property="og:title" content="Kevin Chan — Machine learning systems, NTU">
+<meta property="og:description" content="I build machine learning systems, then try to prove they're wrong.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="topbar">
+  <nav aria-label="Sections">
+    <a class="wordmark" href="#top">KC</a>
+    <ul>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main">
+
+<section id="top" class="hero">
+  <h1>Kevin&nbsp;Chan.</h1>
+  <p class="thesis">I build machine learning systems, then try to prove they&rsquo;re wrong.</p>
+  <div class="lede">
+    <p>At MINDEF I benchmarked a sentiment classifier against a 217-row human-annotated gold set and three baseline models before I was willing to put a number on it. Two of the things I&rsquo;ve built are live, and used by people who aren&rsquo;t me.</p>
+    <p>Mathematical and Computer Sciences at NTU Singapore, graduating 2028.</p>
+  </div>
+  <p class="hero-links">
+    <a class="cta" href="#work">Selected work</a>
+    <a class="cta" href="https://github.com/kevinn-chan" rel="me noopener">GitHub<span aria-hidden="true"> ↗</span></a>
+  </p>
+</section>
+
+<!-- ───────────────────────── WORK ───────────────────────── -->
+<section id="work" class="band">
+  <div class="band-label"><span class="num">01</span><span class="rule" aria-hidden="true"></span><h2>Selected work</h2></div>
+
+  <div class="band-body">
+
+    <article class="deep">
+      <header>
+        <h3><a href="https://kevinknowsball.vercel.app" rel="noopener">Joga Bonito<span aria-hidden="true"> ↗</span></a></h3>
+        <p class="tags"><span class="live">Live</span> <span>Next.js</span> <span>FastAPI</span> <span>scikit-learn</span></p>
+      </header>
+      <p>A World Cup 2026 prediction engine — full 48-team bracket simulation, individual match predictions, squad exploration.</p>
+      <p>The classifier is a scikit-learn histogram gradient-boosting model trained on 49,214 international matches with four-year half-life time decay, emitting Poisson scoring rates rather than a bare win probability. An 18-feature squad-quality layer — squad value, elite-league share, tactical entropy, star-reliance measured as a Gini coefficient — is applied at inference rather than during training, because historical squad data simply doesn&rsquo;t reach back far enough to learn from. Dixon-Coles calibration corrects the low-scoring outcomes Poisson gets wrong, and neutral-ground symmetrisation strips home-team bias by averaging each prediction with its reverse. Brackets resolve through 10,000 Monte Carlo simulations.</p>
+      <ul class="metrics">
+        <li><b>49,214</b><span>matches trained on</span></li>
+        <li><b>20</b><span>player archetypes</span></li>
+        <li><b>10,000</b><span>bracket simulations</span></li>
+      </ul>
+      <p class="src"><a href="https://github.com/kevinn-chan/kevinknowsball" rel="noopener">Source<span aria-hidden="true"> ↗</span></a></p>
+    </article>
+
+    <article class="deep">
+      <header>
+        <h3><a href="https://valedictorian-run.vercel.app" rel="noopener">Valedictorian Run<span aria-hidden="true"> ↗</span></a></h3>
+        <p class="tags"><span class="live">Live</span> <span>Next.js 16</span> <span>TypeScript</span> <span>Supabase</span></p>
+      </header>
+      <p>A study platform that turns course PDFs into topic wikis, spaced-repetition cards, mock exams, teach-back grading and grounded Q&amp;A with page-level citations.</p>
+      <p>It has no vector database, on purpose. The model reads each uploaded file once at ingest, extracting page-cited chunks and building a topic index; the corpus then stays in context at query time, with Postgres <code>tsvector</code> ranking as a fallback only when the window overflows. For a bounded personal corpus that removes retrieval drift and relevance tuning entirely. Figures are pulled out with mupdf, rasterised with sharp and linked back to topics, so the chat can read a diagram and still cite the page it came from.</p>
+      <ul class="metrics">
+        <li><b>Page-level</b><span>citations on every answer</span></li>
+        <li><b>No vector DB</b><span>compile-on-ingest instead</span></li>
+        <li><b>$0</b><span>monthly running cost</span></li>
+      </ul>
+      <p class="src"><a href="https://github.com/kevinn-chan/Valedictorian-Run-Demo" rel="noopener">Source<span aria-hidden="true"> ↗</span></a></p>
+    </article>
+
+    <h4 class="sub">Also built</h4>
+    <ol class="brief">
+
+      <li>
+        <div class="brief-head">
+          <h3>Context Aware Risk Engine</h3>
+          <span class="when">Feb — Mar 2026</span>
+        </div>
+        <p>Traffic-accident detection that quantifies environmental risk instead of trusting object detection alone. Zero-shot CLIP with engineered semantic anchors reads what a scene <em>means</em> rather than what is in it; 10,000 Monte Carlo runs set a Value-at-Risk baseline; Bayesian fusion and persistence gating hold back the false positives that cause alarm fatigue.</p>
+        <p class="tags"><span>Python</span> <span>PyTorch</span> <span>CLIP</span> <span>Streamlit</span> <span class="wip">Prototype</span> <a href="https://github.com/kevinn-chan/CARE" rel="noopener">Source<span aria-hidden="true"> ↗</span></a></p>
+      </li>
+
+      <li>
+        <div class="brief-head">
+          <h3>Bobina</h3>
+          <span class="when">Voice agent</span>
+        </div>
+        <p>Conducts sentiment interviews over phone or browser. Whisper-Singlish transcription into Groq Llama&nbsp;3.3&nbsp;70B into Azure Neural speech, on Pipecat, at 0.2–0.9s turn latency. Emotion recognition runs alongside; NRIC, phone and email are scrubbed from transcripts, and consent is verified before an interview is allowed to begin.</p>
+        <p class="tags"><span>Python</span> <span>FastAPI</span> <span>Pipecat</span> <span>Twilio</span> <span class="wip">Prototype</span> <a href="https://github.com/kevinn-chan/ai-questionnaire-caller" rel="noopener">Source<span aria-hidden="true"> ↗</span></a></p>
+      </li>
+
+      <li>
+        <div class="brief-head">
+          <h3>DSTA BrainHack TIL-AI</h3>
+          <span class="when">Advanced Track Finalist, 2026</span>
+        </div>
+        <p>Six competition tracks with one teammate: a rule-based Bomberman agent taken through sixteen versions to 237.8 average reward, Qwen3 fine-tuned for noisy four-language speech recognition, YOLOv8 over nineteen military classes exported to TensorRT, TF-IDF retrieval QA with unanswerable-question detection, and a checkerboard adversarial perturbation at ε=8 inside SSIM constraints. The finals ran six containers behind a single routing endpoint.</p>
+        <p class="tags"><span>PyTorch</span> <span>YOLOv8</span> <span>Docker</span> <a href="https://github.com/meganchuaa/kteam-TIL_AI-BrainHack-2026" rel="noopener">Source<span aria-hidden="true"> ↗</span></a></p>
+      </li>
+
+      <li>
+        <div class="brief-head">
+          <h3>University Career Services Portal</h3>
+          <span class="when">Sep — Nov 2025</span>
+        </div>
+        <p>A university careers portal built as a Java command-line application. Role-based access control separates student, staff and admin permissions; profile and listing hierarchies are structured along SOLID lines; persistence is plain CSV file handling rather than a database, which keeps the whole thing runnable from a clean checkout.</p>
+        <p class="tags"><span>Java</span> <span>OOP</span> <span class="wip">Coursework</span> <a href="https://github.com/kevinn-chan/Uni-Career-Portal" rel="noopener">Source<span aria-hidden="true"> ↗</span></a></p>
+      </li>
+
+      <li>
+        <div class="brief-head">
+          <h3>Restock Tracker</h3>
+          <span class="when">Utility</span>
+        </div>
+        <p>A headless Selenium watcher that polls product pages and pushes a Telegram message the moment stock returns. It re-initialises its own browser session when the driver crashes or times out, waits on explicit conditions rather than sleeping, and keeps its bot token in the environment instead of the source.</p>
+        <p class="tags"><span>Python</span> <span>Selenium</span> <span>asyncio</span> <a href="https://github.com/kevinn-chan/Restock-Tracker" rel="noopener">Source<span aria-hidden="true"> ↗</span></a></p>
+      </li>
+
+    </ol>
+  </div>
+</section>
+
+<!-- ───────────────────────── EXPERIENCE ───────────────────────── -->
+<section id="experience" class="band">
+  <div class="band-label"><span class="num">02</span><span class="rule" aria-hidden="true"></span><h2>Experience</h2></div>
+
+  <div class="band-body">
+    <article class="deep">
+      <header>
+        <h3>Data Science (NLP) Intern</h3>
+        <p class="org">Ministry of Defence, Singapore <span class="when">May — Jul 2026</span></p>
+      </header>
+      <p>Built a nine-stage pipeline over 2.1GB of compressed Reddit archives, taking 13.6M raw records down to 737K semantically chunked units and clustering them — UMAP to five dimensions, then HDBSCAN, then c-TF-IDF — into a 359-topic taxonomy I rolled up by hand into 17 macro topics.</p>
+      <p>Fine-tuned SingBERT, a Singapore-specific model that survives Singlish and code-switching, for sentiment classification. Evaluated against a 217-row human-annotated gold set it reached 84% accuracy at κ&nbsp;=&nbsp;0.71 and macro F1 0.78, beating VADER (κ&nbsp;=&nbsp;0.31), generic BERT (κ&nbsp;=&nbsp;0.52) and zero-shot GPT-4.1-mini (κ&nbsp;=&nbsp;0.68). A separate four-stage cascade classified commitment along two axes against a 727-row gold set.</p>
+      <p>Shipped a seven-page Streamlit dashboard and a retrieval chatbot over a FAISS index of all 737K chunk embeddings. A rule-based query router — no model call, under five milliseconds — decides whether a question is quantitative, and if it is, answers from a pre-aggregated fact table in under 100ms rather than paying for an LLM round trip.</p>
+      <ul class="metrics">
+        <li><b>13.6M → 737K</b><span>records structured</span></li>
+        <li><b>κ = 0.71</b><span>vs. human gold set</span></li>
+        <li><b>&lt;100ms</b><span>routed query latency</span></li>
+      </ul>
+      <p class="src"><a href="https://github.com/kevinn-chan/NS-Sentiment-Analysis-NLP" rel="noopener">Public repository<span aria-hidden="true"> ↗</span></a></p>
+    </article>
+
+    <h4 class="sub">Education</h4>
+    <ol class="brief">
+      <li>
+        <div class="brief-head">
+          <h3>Nanyang Technological University</h3>
+          <span class="when">Aug 2024 — May 2028</span>
+        </div>
+        <p>BSc (Honours, Distinction) in Mathematical and Computer Sciences — a double major across mathematics and computing.</p>
+        <p class="tags"><span>Machine Learning</span> <span>Statistics</span> <span>Regression Analysis</span> <span>Data Science &amp; AI</span> <span>Databases</span></p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ───────────────────────── ABOUT + CONTACT ───────────────────────── -->
+<section id="about" class="band">
+  <div class="band-label"><span class="num">03</span><span class="rule" aria-hidden="true"></span><h2>About</h2></div>
+  <div class="band-body">
+    <div class="prose">
+      <p>Most of what I enjoy about this work happens after the model trains. Anyone can report an accuracy figure; the interesting question is what it was measured against, and whether a simpler baseline would have done just as well. That habit is why the MINDEF classifier was benchmarked against three alternatives on annotated data instead of a held-out split, and why Valedictorian Run has no vector database — I couldn&rsquo;t justify one for a corpus that fits in context.</p>
+      <p>I&rsquo;m looking for data science, machine learning and applied AI internships in Singapore.</p>
+    </div>
+
+    <div id="contact" class="contact">
+      <h4 class="sub">Contact</h4>
+      <ul class="links">
+        <li><span class="k">Email</span><a id="mail" href="#">&nbsp;</a></li>
+        <li><span class="k">LinkedIn</span><a href="https://www.linkedin.com/in/kevin-chan-kang-le" rel="me noopener">kevin-chan-kang-le<span aria-hidden="true"> ↗</span></a></li>
+        <li><span class="k">GitHub</span><a href="https://github.com/kevinn-chan" rel="me noopener">kevinn-chan<span aria-hidden="true"> ↗</span></a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>Singapore. Built by hand — <a href="https://github.com/kevinn-chan/kevinn-chan.github.io" rel="noopener">source</a>.</p>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
