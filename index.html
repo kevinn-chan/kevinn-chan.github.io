@@ -11,9 +11,33 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;800&family=JetBrains+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css?v=8">
 </head>
 <body>
+
+<svg class="sprite" aria-hidden="true" focusable="false"><defs>
+<symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 2l1.9 6.2L20 10l-6.1 1.8L12 18l-1.9-6.2L4 10l6.1-1.8z"/></symbol>
+<symbol id="i-net" viewBox="0 0 24 24"><circle cx="5" cy="6" r="2.2"/><circle cx="5" cy="18" r="2.2"/><circle cx="19" cy="12" r="2.2"/><circle cx="12" cy="4" r="1.6"/><circle cx="12" cy="20" r="1.6"/><path d="M7 6.8l3.6 6M7 17.2l3.6-6M13.6 4.9L17.4 10M13.6 19.1l3.8-5.1"/></symbol>
+<symbol id="i-ball" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7.2l3.4 2.5-1.3 4h-4.2l-1.3-4z"/><path d="M12 3.2v4M4.6 9.1l3.6 2.6M19.4 9.1l-3.6 2.6M8.2 20.4l1.6-4.7M15.8 20.4l-1.6-4.7"/></symbol>
+<symbol id="i-book" viewBox="0 0 24 24"><path d="M4 4.5A1.5 1.5 0 015.5 3H18a1 1 0 011 1v13H5.5A1.5 1.5 0 004 18.5z"/><path d="M4 18.5A1.5 1.5 0 015.5 17H19v4H5.5A1.5 1.5 0 014 19.5z"/><path d="M8 7.5h7M8 11h5"/></symbol>
+<symbol id="i-risk" viewBox="0 0 24 24"><path d="M12 3l8.5 15.2a1 1 0 01-.87 1.5H4.37a1 1 0 01-.87-1.5z"/><path d="M12 9.5v4.2M12 17.1v.1"/></symbol>
+<symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="2.5" width="6" height="11" rx="3"/><path d="M5.5 11.5a6.5 6.5 0 0013 0M12 18v3.2M8.6 21.4h6.8"/></symbol>
+<symbol id="i-trophy" viewBox="0 0 24 24"><path d="M7 3.5h10v5a5 5 0 01-10 0z"/><path d="M7 5H4.6v1.6A3.4 3.4 0 007.4 10M17 5h2.4v1.6A3.4 3.4 0 0116.6 10"/><path d="M12 13.5v4M8.6 20.5h6.8l-.7-3H9.3z"/></symbol>
+<symbol id="i-flask" viewBox="0 0 24 24"><path d="M9.5 3v6.2L4.4 18a1.6 1.6 0 001.4 2.4h12.4A1.6 1.6 0 0019.6 18l-5.1-8.8V3"/><path d="M8.2 3h7.6M7.3 14.4h9.4"/></symbol>
+<symbol id="i-build" viewBox="0 0 24 24"><path d="M14.5 6.2a3.8 3.8 0 015 5L19 11l-2.3-2.3z" /><path d="M15.6 10.4L6.8 19.2a2 2 0 01-2.8-2.8l8.8-8.8"/><path d="M9.3 4.6l2.4 2.4M4.2 8.4l2.4 2.4"/></symbol>
+<symbol id="i-loop" viewBox="0 0 24 24"><path d="M4.5 12a7.5 7.5 0 0112.8-5.3L20 9.4"/><path d="M19.5 12a7.5 7.5 0 01-12.8 5.3L4 14.6"/><path d="M20 4.8v4.6h-4.6M4 19.2v-4.6h4.6"/></symbol>
+<symbol id="i-code" viewBox="0 0 24 24"><path d="M8.4 7.6L4 12l4.4 4.4M15.6 7.6L20 12l-4.4 4.4M13.6 4.4l-3.2 15.2"/></symbol>
+<symbol id="i-brain" viewBox="0 0 24 24"><path d="M12 5.2a3 3 0 00-5.6-1.1A2.9 2.9 0 004 8.6a3 3 0 00.5 4.7A3 3 0 007.5 19a3 3 0 004.5.6z"/><path d="M12 5.2a3 3 0 015.6-1.1A2.9 2.9 0 0120 8.6a3 3 0 01-.5 4.7A3 3 0 0116.5 19a3 3 0 01-4.5.6z"/><path d="M12 5.2v14.4"/></symbol>
+<symbol id="i-db" viewBox="0 0 24 24"><ellipse cx="12" cy="5.8" rx="7.2" ry="2.9"/><path d="M4.8 5.8v12.4c0 1.6 3.2 2.9 7.2 2.9s7.2-1.3 7.2-2.9V5.8"/><path d="M4.8 12c0 1.6 3.2 2.9 7.2 2.9s7.2-1.3 7.2-2.9"/></symbol>
+<symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3.2 12h17.6M12 3a14 14 0 010 18 14 14 0 010-18z"/></symbol>
+<symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.5 12S6 5.6 12 5.6 21.5 12 21.5 12 18 18.4 12 18.4 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="2.8"/></symbol>
+<symbol id="i-wave" viewBox="0 0 24 24"><path d="M2.5 12h2.4M7.3 7v10M11.6 3.6v16.8M15.9 8.4v7.2M20.2 10.6v2.8"/></symbol>
+<symbol id="i-dice" viewBox="0 0 24 24"><rect x="3.4" y="3.4" width="17.2" height="17.2" rx="3.4"/><circle cx="8.6" cy="8.6" r="1.15"/><circle cx="15.4" cy="15.4" r="1.15"/><circle cx="15.4" cy="8.6" r="1.15"/><circle cx="8.6" cy="15.4" r="1.15"/></symbol>
+<symbol id="i-chart" viewBox="0 0 24 24"><path d="M3.5 20.5h17"/><path d="M6.6 20.5v-6.2M11 20.5V6.2M15.4 20.5v-9M19.8 20.5V9.4"/></symbol>
+<symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13.2 2.5L4.6 13.4h6L10 21.5l8.8-11h-6.2z"/></symbol>
+<symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.6"/><circle cx="12" cy="12" r="4.6"/><circle cx="12" cy="12" r="1"/></symbol>
+</defs></svg>
 
 <a class="skip" href="#main">skip to content</a>
 
@@ -35,8 +59,22 @@
 
 <!-- ══════════════ INTRO ══════════════ -->
 <section id="top" class="hero">
-  <p class="eyebrow">Singapore · available Jan — May 2027</p>
-  <h1>hi, i'm kevin.<br><span class="muted-h1">i build machine learning systems, then try to prove they're wrong.</span></h1>
+  <div class="scatter" aria-hidden="true">
+    <span class="s1"><svg class="ic"><use href="#i-net"/></svg></span>
+    <span class="s2"><svg class="ic"><use href="#i-chart"/></svg></span>
+    <span class="s3"><svg class="ic"><use href="#i-ball"/></svg></span>
+    <span class="s4"><svg class="ic"><use href="#i-db"/></svg></span>
+    <span class="s5"><svg class="ic"><use href="#i-brain"/></svg></span>
+    <span class="s6"><svg class="ic"><use href="#i-mic"/></svg></span>
+    <span class="s7"><svg class="ic"><use href="#i-dice"/></svg></span>
+    <span class="s8"><svg class="ic"><use href="#i-eye"/></svg></span>
+    <span class="s9"><svg class="ic"><use href="#i-book"/></svg></span>
+    <span class="s10"><svg class="ic"><use href="#i-code"/></svg></span>
+    <span class="s11"><svg class="ic"><use href="#i-wave"/></svg></span>
+    <span class="s12"><svg class="ic"><use href="#i-trophy"/></svg></span>
+  </div>
+  <p class="eyebrow"><svg class="ic ic-xs"><use href="#i-spark"/></svg> Singapore · available Jan — May 2027</p>
+  <h1>hi, i'm kevin.<br><span class="muted-h1">i build machine learning systems, then try to <u>prove they're wrong</u>.</span></h1>
   <div class="lede">
     <p>I'm a Mathematical and Computer Sciences undergraduate at NTU Singapore, graduating 2028. I spent last summer at MINDEF turning 13.6&nbsp;million Reddit records into a sentiment pipeline that could actually be trusted — because I hand-annotated the gold set it was measured against before I trained anything on it.</p>
     <p>Most of my work sits where statistics meets shipped software: models that emit probabilities, systems that survive the failure cases, and numbers I can defend when someone asks where they came from.</p>
@@ -48,17 +86,37 @@
   </p>
 </section>
 
+<!-- ══════════════ BY THE NUMBERS ══════════════ -->
+<section class="band sunk stats-band">
+  <div class="wave" aria-hidden="true"><svg viewBox="0 0 1440 56" preserveAspectRatio="none"><path d="M0,26 C240,54 420,2 720,14 C1010,26 1200,52 1440,20 L1440,56 L0,56 Z"/></svg></div>
+  <div class="inner">
+    <ul class="stats reveal">
+      <li><svg class="ic"><use href="#i-db"/></svg><b class="tick" data-to="13.6" data-dec="1" data-suffix="M">13.6M</b><span>raw records structured</span></li>
+      <li><svg class="ic"><use href="#i-target"/></svg><b class="tick" data-to="84" data-suffix="%">84%</b><span>accuracy vs human gold set</span></li>
+      <li><svg class="ic"><use href="#i-net"/></svg><b class="tick" data-to="737" data-suffix="K">737K</b><span>semantic chunks indexed</span></li>
+      <li><svg class="ic"><use href="#i-dice"/></svg><b class="tick" data-to="10000">10,000</b><span>Monte Carlo simulations</span></li>
+    </ul>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>PyTorch</span><span>·</span><span>scikit-learn</span><span>·</span><span>HuggingFace</span><span>·</span><span>FAISS</span><span>·</span><span>UMAP</span><span>·</span><span>HDBSCAN</span><span>·</span><span>CLIP</span><span>·</span><span>YOLOv8</span><span>·</span><span>Next.js</span><span>·</span><span>FastAPI</span><span>·</span><span>Supabase</span><span>·</span><span>Streamlit</span><span>·</span><span>Docker</span><span>·</span><span>Pipecat</span><span>·</span><span>spaCy</span><span>·</span><span>PyTorch</span><span>·</span><span>scikit-learn</span><span>·</span><span>HuggingFace</span><span>·</span><span>FAISS</span><span>·</span><span>UMAP</span><span>·</span><span>HDBSCAN</span><span>·</span><span>CLIP</span><span>·</span><span>YOLOv8</span><span>·</span><span>Next.js</span><span>·</span><span>FastAPI</span><span>·</span><span>Supabase</span><span>·</span><span>Streamlit</span><span>·</span><span>Docker</span><span>·</span><span>Pipecat</span><span>·</span><span>spaCy</span><span>·</span>
+  </div>
+</div>
+
 <!-- ══════════════ WORK ══════════════ -->
-<section id="work" class="band sunk">
+<section id="work" class="band">
   <div class="inner">
     <header class="band-head">
-      <h2>selected work</h2>
+      <h2>selected work<svg class="doodle" aria-hidden="true"><use href="#i-spark"/></svg></h2>
       <p class="band-note">Six projects, each written up the same way: the problem, how I thought about it, what came out, and what I'd do differently. Not a gallery — the reasoning is the point.</p>
     </header>
 
     <!-- 1 -->
-    <article class="proj">
+    <article class="proj reveal">
       <div class="proj-head">
+        <span class="pico" aria-hidden="true"><svg class="ic"><use href="#i-net"/></svg></span>
         <span class="idx" aria-hidden="true">01</span>
         <div>
           <h3>National Service Sentiment Analysis</h3>
@@ -86,8 +144,9 @@
     </article>
 
     <!-- 2 -->
-    <article class="proj">
+    <article class="proj reveal">
       <div class="proj-head">
+        <span class="pico" aria-hidden="true"><svg class="ic"><use href="#i-ball"/></svg></span>
         <span class="idx" aria-hidden="true">02</span>
         <div>
           <h3>Joga Bonito <span class="badge">live</span></h3>
@@ -115,8 +174,9 @@
     </article>
 
     <!-- 3 -->
-    <article class="proj">
+    <article class="proj reveal">
       <div class="proj-head">
+        <span class="pico" aria-hidden="true"><svg class="ic"><use href="#i-book"/></svg></span>
         <span class="idx" aria-hidden="true">03</span>
         <div>
           <h3>Valedictorian Run <span class="badge">live</span></h3>
@@ -144,8 +204,9 @@
     </article>
 
     <!-- 4 -->
-    <article class="proj">
+    <article class="proj reveal">
       <div class="proj-head">
+        <span class="pico" aria-hidden="true"><svg class="ic"><use href="#i-risk"/></svg></span>
         <span class="idx" aria-hidden="true">04</span>
         <div>
           <h3>Context Aware Risk Engine <span class="badge badge-quiet">prototype</span></h3>
@@ -173,8 +234,9 @@
     </article>
 
     <!-- 5 -->
-    <article class="proj">
+    <article class="proj reveal">
       <div class="proj-head">
+        <span class="pico" aria-hidden="true"><svg class="ic"><use href="#i-mic"/></svg></span>
         <span class="idx" aria-hidden="true">05</span>
         <div>
           <h3>Bobina <span class="badge badge-quiet">prototype</span></h3>
@@ -202,8 +264,9 @@
     </article>
 
     <!-- 6 -->
-    <article class="proj">
+    <article class="proj reveal">
       <div class="proj-head">
+        <span class="pico" aria-hidden="true"><svg class="ic"><use href="#i-trophy"/></svg></span>
         <span class="idx" aria-hidden="true">06</span>
         <div>
           <h3>DSTA BrainHack TIL-AI <span class="badge">finalist</span></h3>
@@ -235,25 +298,26 @@
 
 <!-- ══════════════ PROCESS ══════════════ -->
 <section id="process" class="band">
+  <div class="wave" aria-hidden="true"><svg viewBox="0 0 1440 56" preserveAspectRatio="none"><path d="M0,26 C240,54 420,2 720,14 C1010,26 1200,52 1440,20 L1440,56 L0,56 Z"/></svg></div>
   <div class="inner">
     <header class="band-head">
-      <h2>how i work</h2>
+      <h2>how i work<svg class="doodle" aria-hidden="true"><use href="#i-spark"/></svg></h2>
       <p class="band-note">If there's one thing I'd want to be judged on, it's this. The projects change; the method doesn't.</p>
     </header>
 
     <ol class="process">
-      <li>
-        <span class="step" aria-hidden="true">01</span>
+      <li class="reveal">
+        <span class="step" aria-hidden="true"><svg class="ic"><use href="#i-flask"/></svg>01</span>
         <h3>research — decide what would convince you, first</h3>
         <p>Before I build anything I write down what I'd have to see to believe it worked, and what a fair baseline looks like. That ordering matters: choose the metric after the results and you'll pick the flattering one. On the NS project it meant hand-annotating 217 examples and benchmarking four approaches against them before committing to one. The gold set cost days and made every number afterwards defensible.</p>
       </li>
-      <li>
-        <span class="step" aria-hidden="true">02</span>
+      <li class="reveal">
+        <span class="step" aria-hidden="true"><svg class="ic"><use href="#i-build"/></svg>02</span>
         <h3>build — thinnest end-to-end path, then attack the weakest stage</h3>
         <p>I'd rather have an ugly pipeline where all nine stages run than three perfect ones and a gap. Once it runs end to end, the bottleneck tells you where to spend time instead of you guessing. Then I look for components that can be <em>deleted</em> rather than optimised — Valedictorian Run has no vector database and the NS chatbot's query router makes no model call, both because the version without them was simpler and measurably better.</p>
       </li>
-      <li>
-        <span class="step" aria-hidden="true">03</span>
+      <li class="reveal">
+        <span class="step" aria-hidden="true"><svg class="ic"><use href="#i-loop"/></svg>03</span>
         <h3>feedback — keep versions, not tweaks; find the failure before a user does</h3>
         <p>Every significant change becomes a numbered version with a stated hypothesis, so an improvement can be traced to a cause. Sixteen versions of the BrainHack agent is what turned iteration into evidence. In parallel I build the thing that tries to break it early: CARE's stress testbench and Bobina's idle-then-hang-up handling both existed before either project had a usable interface.</p>
       </li>
@@ -263,31 +327,32 @@
 
 <!-- ══════════════ SKILLS ══════════════ -->
 <section id="skills" class="band sunk">
+  <div class="wave" aria-hidden="true"><svg viewBox="0 0 1440 56" preserveAspectRatio="none"><path d="M0,26 C240,54 420,2 720,14 C1010,26 1200,52 1440,20 L1440,56 L0,56 Z"/></svg></div>
   <div class="inner">
     <header class="band-head">
-      <h2>skills</h2>
+      <h2>skills<svg class="doodle" aria-hidden="true"><use href="#i-spark"/></svg></h2>
       <p class="band-note">Everything here appears in a shipped project on this page — nothing listed from a tutorial.</p>
     </header>
 
     <div class="skills">
-      <div class="skillgroup">
-        <h3>languages</h3>
+      <div class="skillgroup reveal">
+        <h3><svg class="ic ic-xs"><use href="#i-code"/></svg>languages</h3>
         <ul><li>Python</li><li>R</li><li>TypeScript</li><li>JavaScript</li><li>Java</li><li>SQL</li></ul>
       </div>
-      <div class="skillgroup">
-        <h3>machine learning</h3>
+      <div class="skillgroup reveal">
+        <h3><svg class="ic ic-xs"><use href="#i-brain"/></svg>machine learning</h3>
         <ul><li>PyTorch</li><li>scikit-learn</li><li>HuggingFace Transformers</li><li>BERT fine-tuning</li><li>CLIP</li><li>YOLOv8</li><li>UMAP</li><li>HDBSCAN</li><li>K-means</li></ul>
       </div>
-      <div class="skillgroup">
-        <h3>data &amp; retrieval</h3>
+      <div class="skillgroup reveal">
+        <h3><svg class="ic ic-xs"><use href="#i-db"/></svg>data &amp; retrieval</h3>
         <ul><li>pandas</li><li>NumPy</li><li>FAISS</li><li>Parquet</li><li>PostgreSQL</li><li>Supabase</li><li>SQLite</li><li>spaCy</li></ul>
       </div>
-      <div class="skillgroup">
-        <h3>web &amp; deployment</h3>
+      <div class="skillgroup reveal">
+        <h3><svg class="ic ic-xs"><use href="#i-globe"/></svg>web &amp; deployment</h3>
         <ul><li>Next.js</li><li>React</li><li>FastAPI</li><li>Streamlit</li><li>Tailwind</li><li>Docker</li><li>Vercel</li><li>Render</li></ul>
       </div>
       <div class="skillgroup wide">
-        <h3>methods i actually use</h3>
+        <h3><svg class="ic ic-xs"><use href="#i-bolt"/></svg>methods i actually use</h3>
         <ul>
           <li>Gold-set evaluation</li><li>Baseline benchmarking</li><li>Inter-annotator agreement (κ)</li>
           <li>Monte Carlo simulation</li><li>Bayesian fusion</li><li>Poisson &amp; Dixon-Coles modelling</li>
@@ -299,7 +364,7 @@
 
     <div class="strengths">
       <h3 class="sub">where i'm strongest</h3>
-      <div class="strength-grid">
+      <div class="strength-grid reveal">
         <div><b>Evaluation design</b><p>Building the ground truth a model gets measured against, and choosing baselines that make the result mean something.</p></div>
         <div><b>End-to-end pipelines</b><p>Taking raw, messy, large data through cleaning, structuring and modelling to something a non-technical person can use.</p></div>
         <div><b>Knowing what to cut</b><p>Recognising when the standard component — a vector DB, an LLM call, a heavier model — isn't earning its place.</p></div>
@@ -312,7 +377,7 @@
 <section id="testimonial" class="band">
   <div class="inner narrow">
     <h2 class="sr-head">what my supervisor said</h2>
-    <figure class="quote">
+    <figure class="quote reveal">
       <blockquote>
         <p>“When the model was not performing the way he wanted, he would go away, dig into the problem himself, and come back with a considered approach rather than just asking to be told what to do. <b>That kind of self-directed problem solving is genuinely rare, especially at the intern level.</b>”</p>
         <p>“He completed all of this with two weeks of the internship still to go. Rather than coast, he used that time to build a proof-of-concept for an AI voice calling agent — a completely different technical domain that he picked up and ran with on his own initiative.”</p>
@@ -332,8 +397,9 @@
 
 <!-- ══════════════ ABOUT ══════════════ -->
 <section id="about" class="band sunk">
+  <div class="wave" aria-hidden="true"><svg viewBox="0 0 1440 56" preserveAspectRatio="none"><path d="M0,26 C240,54 420,2 720,14 C1010,26 1200,52 1440,20 L1440,56 L0,56 Z"/></svg></div>
   <div class="inner narrow">
-    <h2>about me</h2>
+    <h2>about me<svg class="doodle" aria-hidden="true"><use href="#i-spark"/></svg></h2>
     <p>I'm reading Mathematical and Computer Sciences at NTU Singapore — a double major across mathematics and computing — graduating in 2028 with Honours (Distinction). Coursework that's actually shown up in my work: Machine Learning, Statistics, Regression Analysis, Introduction to Data Science &amp; AI, and Databases.</p>
     <p>The thing I enjoy most happens after the model trains. Anyone can report an accuracy figure; the interesting question is what it was measured against, and whether something simpler would have done just as well. That instinct is why the MINDEF classifier was benchmarked against three alternatives on annotated data instead of a held-out split, and why I took the vector database out of a project that everyone would tell you needs one.</p>
     <p>Outside that, I'm usually building something that didn't need to exist — a football model because I wanted to argue with friends using numbers, a study tool because revision week was going badly.</p>
@@ -343,10 +409,10 @@
 <!-- ══════════════ CONTACT ══════════════ -->
 <section id="contact" class="band">
   <div class="inner narrow">
-    <h2>get in touch</h2>
+    <h2>get in touch<svg class="doodle" aria-hidden="true"><use href="#i-spark"/></svg></h2>
     <p class="band-note">Open to data science, ML and applied AI internships in Singapore, available January to May 2027 — and always happy to talk about evaluation design, or why your RAG pipeline might not need to be a RAG pipeline.</p>
 
-    <ul class="contacts">
+    <ul class="contacts reveal">
       <li>
         <a id="mail" href="#">
           <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v.4l-10 5.6L2 5.4V5Zm0 2.7V19a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7.7l-9.5 5.3a1 1 0 0 1-1 0L2 7.7Z"/></svg>
@@ -380,6 +446,6 @@
   <p>kevin chan · singapore · <span id="year">2026</span></p>
 </footer>
 
-<script src="main.js"></script>
+<script src="main.js?v=8"></script>
 </body>
 </html>
