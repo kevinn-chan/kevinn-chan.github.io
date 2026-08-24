@@ -1,10 +1,11 @@
-// Nav scrollspy, scroll reveals, number tickers, email assembly.
-// ponytail: IntersectionObserver + rAF are native. No animation library.
+// Scrollspy, bidirectional scroll reveals, word-split headline, spotlight
+// cards, hero parallax, scroll progress, number tickers, email assembly.
+//
+// ponytail: IntersectionObserver + rAF + CSS custom properties. No GSAP,
+// no ScrollTrigger, no animation library. One scroll handler for everything
+// that is scroll-linked, rAF-throttled.
 
 const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-// Opt into the hidden-then-revealed state only once JS is confirmed running,
-// so no-JS visitors and crawlers get the fully visible page.
 if (!reduced) document.documentElement.classList.add('js');
 
 /* ── nav scrollspy ─────────────────────────────────────────── */
@@ -22,29 +23,110 @@ const spy = new IntersectionObserver(entries => {
 }, { rootMargin: '-15% 0px -70% 0px' });
 sections.forEach(s => spy.observe(s));
 
-/* ── scroll reveal ─────────────────────────────────────────── */
+/* ── bidirectional scroll reveal ───────────────────────────────
+   Enter the band, fade up; leave it, fade back out. Unlike a
+   one-shot reveal we never unobserve, so scrolling back up
+   replays it.
+   ──────────────────────────────────────────────────────────── */
 const reveals = [...document.querySelectorAll('.reveal')];
+let observerFired = false;
+
 if (reduced) {
   reveals.forEach(el => el.classList.add('in'));
 } else {
-  const io = new IntersectionObserver((entries, obs) => {
-    for (const e of entries) {
-      if (!e.isIntersecting) continue;
-      e.target.classList.add('in');
-      obs.unobserve(e.target);          // reveal once, then stop watching
-    }
-  }, { rootMargin: '0px 0px -12% 0px', threshold: 0.08 });
+  const io = new IntersectionObserver(entries => {
+    observerFired = true;
+    for (const e of entries) e.target.classList.toggle('in', e.isIntersecting);
+  }, { rootMargin: '-10% 0px -10% 0px', threshold: 0 });
   reveals.forEach(el => io.observe(el));
 
-  // Failsafe: content starts at opacity 0, so anything that stops the observer
-  // firing would hide the page permanently. IntersectionObserver does not run
-  // in a hidden document (background tab, prerender, some embedded viewers), so
-  // this is reachable in the wild, not just in theory. Show everything after 3s
-  // regardless; the observer usually wins long before this fires.
-  // Snap rather than transition: if we are falling back, the document may be
-  // hidden, and CSS transitions do not advance in a hidden document either.
-  setTimeout(() => reveals.forEach(el => el.classList.add('shown')), 3000);
+  // Content starts at opacity 0, so if the observer never runs at all the
+  // page would stay blank. IntersectionObserver does not fire in a hidden
+  // document. Only force-show when nothing has fired — otherwise this would
+  // fight the toggle above. Snap rather than transition, since transitions
+  // are suspended in a hidden document too.
+  setTimeout(() => {
+    if (!observerFired) reveals.forEach(el => el.classList.add('shown'));
+  }, 3000);
 }
+
+/* ── split the headline into words for a staggered entrance ──── */
+function splitWords(root) {
+  const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+  const texts = [];
+  while (walker.nextNode()) texts.push(walker.currentNode);
+
+  let i = 0;
+  for (const node of texts) {
+    if (!node.textContent.trim()) continue;
+    const frag = document.createDocumentFragment();
+    // keep the whitespace so words don't run together when they wrap
+    for (const part of node.textContent.split(/(\s+)/)) {
+      if (!part) continue;
+      if (/^\s+$/.test(part)) { frag.appendChild(document.createTextNode(part)); continue; }
+      const span = document.createElement('span');
+      span.className = 'w';
+      span.style.setProperty('--i', i++);
+      span.textContent = part;
+      frag.appendChild(span);
+    }
+    node.parentNode.replaceChild(frag, node);
+  }
+}
+
+const headline = document.querySelector('h1');
+if (headline && !reduced) {
+  splitWords(headline);
+  requestAnimationFrame(() => headline.classList.add('lit'));
+}
+
+/* ── spotlight cards (cursor-tracked radial highlight) ───────── */
+if (!reduced && matchMedia('(hover: hover)').matches) {
+  for (const card of document.querySelectorAll('.spot')) {
+    card.addEventListener('pointermove', e => {
+      const r = card.getBoundingClientRect();
+      card.style.setProperty('--mx', `${e.clientX - r.left}px`);
+      card.style.setProperty('--my', `${e.clientY - r.top}px`);
+    });
+  }
+}
+
+/* ── scroll-linked: progress bar + hero parallax ─────────────── */
+const bar = document.querySelector('.progress');
+const scatter = [...document.querySelectorAll('.scatter span')];
+const hero = document.querySelector('.hero');
+let queued = false;
+
+function onScroll() {
+  const y = window.scrollY;
+
+  if (bar) {
+    const max = document.documentElement.scrollHeight - innerHeight;
+    bar.style.transform = `scaleX(${max > 0 ? Math.min(y / max, 1) : 0})`;
+  }
+
+  // Ornament drifts and fades as the hero leaves — reversible, so it comes
+  // back on the way up. This is the "appear and disappear" pass.
+  if (hero && scatter.length && !reduced) {
+    const h = hero.offsetHeight || 1;
+    const p = Math.min(y / h, 1);                    // 0 at top, 1 past hero
+    for (let i = 0; i < scatter.length; i++) {
+      const dir = i % 2 ? 1 : -1;
+      const drift = p * 130 * (0.5 + (i % 4) * 0.28);
+      scatter[i].style.setProperty('--sy', `${-drift}px`);
+      scatter[i].style.setProperty('--sx', `${dir * p * 46}px`);
+      scatter[i].style.setProperty('--so', `${Math.max(1 - p * 1.35, 0)}`);
+    }
+  }
+  queued = false;
+}
+
+addEventListener('scroll', () => {
+  if (queued) return;
+  queued = true;
+  requestAnimationFrame(onScroll);
+}, { passive: true });
+onScroll();
 
 /* ── number tickers ────────────────────────────────────────── */
 const fmt = (n, dec) =>
@@ -56,28 +138,23 @@ function runTicker(el) {
   const suffix = el.dataset.suffix || '';
   const DURATION = 1400;
   const final = fmt(to, dec) + suffix;
-  let start;
-  let done = false;
+  let start, done = false;
 
-  function settle() {                            // always end on the true value
-    done = true;
-    el.textContent = final;
-  }
+  function settle() { done = true; el.textContent = final; }
 
   function frame(now) {
     if (done) return;
     start ??= now;
     const p = Math.min((now - start) / DURATION, 1);
     if (p >= 1) return settle();
-    const eased = 1 - Math.pow(1 - p, 3);        // ease-out cubic
-    el.textContent = fmt(to * eased, dec) + suffix;
+    el.textContent = fmt(to * (1 - Math.pow(1 - p, 3)), dec) + suffix;
     requestAnimationFrame(frame);
   }
   requestAnimationFrame(frame);
 
   // rAF is suspended while the document is hidden, which would freeze the
-  // number partway and display a figure that is simply wrong. Timers still
-  // run, so this guarantees the final value lands no matter what.
+  // count partway and display a figure that is simply wrong. Timers keep
+  // running, so this guarantees the true value lands regardless.
   setTimeout(settle, DURATION + 500);
 }
 
@@ -87,15 +164,13 @@ if (!reduced && ticks.length) {
     for (const e of entries) {
       if (!e.isIntersecting) continue;
       runTicker(e.target);
-      obs.unobserve(e.target);
+      obs.unobserve(e.target);          // count up once, don't re-run
     }
   }, { threshold: 0.5 });
   ticks.forEach(t => tio.observe(t));
 }
 
 /* ── contact ───────────────────────────────────────────────── */
-// Assembled at runtime so plain scrapers miss it. Not a real defence,
-// just the cheap 90%. Writes into .c-value so the icon survives.
 const mail = document.getElementById('mail');
 if (mail) {
   const addr = ['chankangle.kevin', 'gmail.com'].join('@');

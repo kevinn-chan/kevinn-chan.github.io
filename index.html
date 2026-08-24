@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;800&family=JetBrains+Mono:wght@400;500&display=swap">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="styles.css?v=8">
+<link rel="stylesheet" href="styles.css?v=11">
 </head>
 <body>
 
@@ -40,6 +40,8 @@
 </defs></svg>
 
 <a class="skip" href="#main">skip to content</a>
+
+<div class="progress" aria-hidden="true"></div>
 
 <header class="topbar">
   <nav aria-label="Sections">
@@ -90,7 +92,7 @@
 <section class="band sunk stats-band">
   <div class="wave" aria-hidden="true"><svg viewBox="0 0 1440 56" preserveAspectRatio="none"><path d="M0,26 C240,54 420,2 720,14 C1010,26 1200,52 1440,20 L1440,56 L0,56 Z"/></svg></div>
   <div class="inner">
-    <ul class="stats reveal">
+    <ul class="stats reveal stagger">
       <li><svg class="ic"><use href="#i-db"/></svg><b class="tick" data-to="13.6" data-dec="1" data-suffix="M">13.6M</b><span>raw records structured</span></li>
       <li><svg class="ic"><use href="#i-target"/></svg><b class="tick" data-to="84" data-suffix="%">84%</b><span>accuracy vs human gold set</span></li>
       <li><svg class="ic"><use href="#i-net"/></svg><b class="tick" data-to="737" data-suffix="K">737K</b><span>semantic chunks indexed</span></li>
@@ -108,13 +110,13 @@
 <!-- ══════════════ WORK ══════════════ -->
 <section id="work" class="band">
   <div class="inner">
-    <header class="band-head">
+    <header class="band-head reveal">
       <h2>selected work<svg class="doodle" aria-hidden="true"><use href="#i-spark"/></svg></h2>
       <p class="band-note">Six projects, each written up the same way: the problem, how I thought about it, what came out, and what I'd do differently. Not a gallery — the reasoning is the point.</p>
     </header>
 
     <!-- 1 -->
-    <article class="proj reveal">
+    <article class="proj reveal spot">
       <div class="proj-head">
         <span class="pico" aria-hidden="true"><svg class="ic"><use href="#i-net"/></svg></span>
         <span class="idx" aria-hidden="true">01</span>
@@ -144,7 +146,7 @@
     </article>
 
     <!-- 2 -->
-    <article class="proj reveal">
+    <article class="proj reveal spot">
       <div class="proj-head">
         <span class="pico" aria-hidden="true"><svg class="ic"><use href="#i-ball"/></svg></span>
         <span class="idx" aria-hidden="true">02</span>
@@ -174,7 +176,7 @@
     </article>
 
     <!-- 3 -->
-    <article class="proj reveal">
+    <article class="proj reveal spot">
       <div class="proj-head">
         <span class="pico" aria-hidden="true"><svg class="ic"><use href="#i-book"/></svg></span>
         <span class="idx" aria-hidden="true">03</span>
@@ -204,7 +206,7 @@
     </article>
 
     <!-- 4 -->
-    <article class="proj reveal">
+    <article class="proj reveal spot">
       <div class="proj-head">
         <span class="pico" aria-hidden="true"><svg class="ic"><use href="#i-risk"/></svg></span>
         <span class="idx" aria-hidden="true">04</span>
@@ -234,7 +236,7 @@
     </article>
 
     <!-- 5 -->
-    <article class="proj reveal">
+    <article class="proj reveal spot">
       <div class="proj-head">
         <span class="pico" aria-hidden="true"><svg class="ic"><use href="#i-mic"/></svg></span>
         <span class="idx" aria-hidden="true">05</span>
@@ -264,7 +266,7 @@
     </article>
 
     <!-- 6 -->
-    <article class="proj reveal">
+    <article class="proj reveal spot">
       <div class="proj-head">
         <span class="pico" aria-hidden="true"><svg class="ic"><use href="#i-trophy"/></svg></span>
         <span class="idx" aria-hidden="true">06</span>
@@ -300,7 +302,7 @@
 <section id="process" class="band">
   <div class="wave" aria-hidden="true"><svg viewBox="0 0 1440 56" preserveAspectRatio="none"><path d="M0,26 C240,54 420,2 720,14 C1010,26 1200,52 1440,20 L1440,56 L0,56 Z"/></svg></div>
   <div class="inner">
-    <header class="band-head">
+    <header class="band-head reveal">
       <h2>how i work<svg class="doodle" aria-hidden="true"><use href="#i-spark"/></svg></h2>
       <p class="band-note">If there's one thing I'd want to be judged on, it's this. The projects change; the method doesn't.</p>
     </header>
@@ -329,12 +331,12 @@
 <section id="skills" class="band sunk">
   <div class="wave" aria-hidden="true"><svg viewBox="0 0 1440 56" preserveAspectRatio="none"><path d="M0,26 C240,54 420,2 720,14 C1010,26 1200,52 1440,20 L1440,56 L0,56 Z"/></svg></div>
   <div class="inner">
-    <header class="band-head">
+    <header class="band-head reveal">
       <h2>skills<svg class="doodle" aria-hidden="true"><use href="#i-spark"/></svg></h2>
       <p class="band-note">Everything here appears in a shipped project on this page — nothing listed from a tutorial.</p>
     </header>
 
-    <div class="skills">
+    <div class="skills reveal stagger">
       <div class="skillgroup reveal">
         <h3><svg class="ic ic-xs"><use href="#i-code"/></svg>languages</h3>
         <ul><li>Python</li><li>R</li><li>TypeScript</li><li>JavaScript</li><li>Java</li><li>SQL</li></ul>
@@ -364,10 +366,10 @@
 
     <div class="strengths">
       <h3 class="sub">where i'm strongest</h3>
-      <div class="strength-grid reveal">
-        <div><b>Evaluation design</b><p>Building the ground truth a model gets measured against, and choosing baselines that make the result mean something.</p></div>
-        <div><b>End-to-end pipelines</b><p>Taking raw, messy, large data through cleaning, structuring and modelling to something a non-technical person can use.</p></div>
-        <div><b>Knowing what to cut</b><p>Recognising when the standard component — a vector DB, an LLM call, a heavier model — isn't earning its place.</p></div>
+      <div class="strength-grid reveal stagger">
+        <div class="spot"><b>Evaluation design</b><p>Building the ground truth a model gets measured against, and choosing baselines that make the result mean something.</p></div>
+        <div class="spot"><b>End-to-end pipelines</b><p>Taking raw, messy, large data through cleaning, structuring and modelling to something a non-technical person can use.</p></div>
+        <div class="spot"><b>Knowing what to cut</b><p>Recognising when the standard component — a vector DB, an LLM call, a heavier model — isn't earning its place.</p></div>
       </div>
     </div>
   </div>
@@ -412,7 +414,7 @@
     <h2>get in touch<svg class="doodle" aria-hidden="true"><use href="#i-spark"/></svg></h2>
     <p class="band-note">Open to data science, ML and applied AI internships in Singapore, available January to May 2027 — and always happy to talk about evaluation design, or why your RAG pipeline might not need to be a RAG pipeline.</p>
 
-    <ul class="contacts reveal">
+    <ul class="contacts reveal stagger">
       <li>
         <a id="mail" href="#">
           <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v.4l-10 5.6L2 5.4V5Zm0 2.7V19a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7.7l-9.5 5.3a1 1 0 0 1-1 0L2 7.7Z"/></svg>
@@ -446,6 +448,6 @@
   <p>kevin chan · singapore · <span id="year">2026</span></p>
 </footer>
 
-<script src="main.js?v=8"></script>
+<script src="main.js?v=11"></script>
 </body>
 </html>

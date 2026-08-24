@@ -44,7 +44,12 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 
-html { scroll-behavior: smooth; scroll-padding-top: 5.5rem; }
+html {
+  scroll-behavior: smooth; scroll-padding-top: 5.5rem;
+  /* Ornament is deliberately positioned past the hero edges. `clip` contains
+     it without breaking position:sticky the way overflow:hidden would. */
+  overflow-x: clip;
+}
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
@@ -52,6 +57,7 @@ html { scroll-behavior: smooth; scroll-padding-top: 5.5rem; }
 
 body {
   margin: 0;
+  overflow-x: clip;            /* with html, fully contains the hero ornament */
   background: var(--paper);
   color: var(--ink);
   font-family: var(--sans);
@@ -423,11 +429,13 @@ footer p {
   border-radius: 50%;
   background: var(--tint); color: var(--accent);
   animation: float 7s ease-in-out infinite;
+  opacity: var(--so, 1);          /* driven by scroll — see main.js */
+  will-change: transform, opacity;
 }
 .scatter span:nth-child(even) { background: var(--tint2); color: var(--accent2); }
 @keyframes float {
-  0%, 100% { transform: translateY(0) rotate(var(--r, 0deg)); }
-  50%      { transform: translateY(-11px) rotate(var(--r, 0deg)); }
+  0%, 100% { transform: translate(var(--sx, 0px), var(--sy, 0px))               rotate(var(--r, 0deg)); }
+  50%      { transform: translate(var(--sx, 0px), calc(var(--sy, 0px) - 11px))  rotate(var(--r, 0deg)); }
 }
 .scatter .s1  { top: 8%;  left: 4%;   --r: -12deg; animation-delay: -.2s; }
 .scatter .s2  { top: 26%; left: 12%;  --r: 8deg;   animation-delay: -1.6s; }
@@ -524,11 +532,11 @@ footer p {
    Default is visible. Only once JS confirms it can run do we
    hide-then-reveal, so no-JS and crawlers still see everything.
    ──────────────────────────────────────────────────────────── */
-.js .reveal { opacity: 0; transform: translateY(16px); }
-.js .reveal.in {
-  opacity: 1; transform: none;
-  transition: opacity .55s ease, transform .55s cubic-bezier(.22,.7,.3,1);
+.js .reveal {
+  opacity: 0; transform: translateY(18px);
+  transition: opacity .6s ease, transform .6s cubic-bezier(.22,.7,.3,1);
 }
+.js .reveal.in { opacity: 1; transform: none; }
 .js .reveal.shown { opacity: 1 !important; transform: none !important; transition: none !important; }
 
 @media (prefers-reduced-motion: reduce) {
@@ -553,4 +561,62 @@ footer p {
   .hero { text-align: left; }
   .hero .lede p, .hero h1 { margin-inline: 0; }
   .eyebrow, .hero-links { justify-content: flex-start; }
+}
+
+/* ============================================================
+   Scroll choreography
+   Patterns adapted from 21st.dev's most-installed components —
+   Spotlight Card, staggered reveals, word-split text — rebuilt
+   in plain CSS/JS since the originals are React.
+   ============================================================ */
+
+/* ── scroll progress ─────────────────────────────────────── */
+.progress {
+  position: fixed; inset: 0 0 auto 0; height: 3px; z-index: 40;
+  background: var(--accent);
+  transform: scaleX(0); transform-origin: 0 50%;
+  will-change: transform;
+}
+
+/* ── staggered children ──────────────────────────────────── */
+.js .stagger > * {
+  opacity: 0; transform: translateY(14px);
+  transition: opacity .5s ease, transform .5s cubic-bezier(.22,.7,.3,1);
+}
+.js .stagger.in > *, .js .stagger.shown > * { opacity: 1; transform: none; }
+.js .stagger.in > *:nth-child(1) { transition-delay: .00s }
+.js .stagger.in > *:nth-child(2) { transition-delay: .07s }
+.js .stagger.in > *:nth-child(3) { transition-delay: .14s }
+.js .stagger.in > *:nth-child(4) { transition-delay: .21s }
+.js .stagger.in > *:nth-child(5) { transition-delay: .28s }
+.js .stagger.in > *:nth-child(6) { transition-delay: .35s }
+
+/* ── headline word reveal ────────────────────────────────── */
+.js h1 .w {
+  display: inline-block;
+  opacity: 0; transform: translateY(.42em); filter: blur(10px);
+  transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.3,1), filter .7s ease;
+  transition-delay: calc(var(--i, 0) * 42ms);
+}
+.js h1.lit .w { opacity: 1; transform: none; filter: blur(0); }
+
+/* ── spotlight cards ─────────────────────────────────────── */
+.spot { position: relative; isolation: isolate; }
+.spot::before {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  border-radius: inherit; pointer-events: none;
+  background: radial-gradient(320px circle at var(--mx, 50%) var(--my, 50%),
+              var(--tint), transparent 68%);
+  opacity: 0; transition: opacity .35s ease;
+}
+.spot:hover::before { opacity: 1; }
+.proj.spot::before { border-radius: 18px; inset: -1.2rem -1.4rem; }
+
+@media (prefers-reduced-motion: reduce) {
+  .progress { display: none; }
+  .js .stagger > *, .js h1 .w {
+    opacity: 1 !important; transform: none !important; filter: none !important;
+    transition: none !important;
+  }
+  .spot::before { display: none; }
 }
