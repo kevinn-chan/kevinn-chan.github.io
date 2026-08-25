@@ -3,16 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Kevin Chan — Machine learning engineer, NTU Singapore</title>
-<meta name="description" content="Kevin Chan turns messy data into systems people can use. Mathematical and Computer Sciences at NTU Singapore. Looking for data science, ML and applied AI internships, available January to May 2027.">
-<meta property="og:title" content="Kevin Chan — Machine learning engineer, NTU Singapore">
-<meta property="og:description" content="I turn messy data into systems people can use. Maths and computing at NTU Singapore.">
+<title>Kevin Chan — Data, ML &amp; AI engineering · NTU Singapore</title>
+<meta name="description" content="Kevin Chan works on machine learning systems, from raw data to something usable. Mathematical and Computer Sciences at NTU Singapore. Open to data science, data engineering, ML and AI engineering internships, January to May 2027.">
+<meta property="og:title" content="Kevin Chan — Data, ML &amp; AI engineering · NTU Singapore">
+<meta property="og:description" content="I work on machine learning systems, from raw data to something usable. Maths and computing at NTU Singapore.">
 <meta property="og:type" content="profile">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;800&family=JetBrains+Mono:wght@400;500&display=swap">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="styles.css?v=12">
+<link rel="stylesheet" href="styles.css?v=16">
 </head>
 <body>
 
@@ -48,6 +48,7 @@
     <a class="wordmark" href="#top">kevin chan<span class="dot" aria-hidden="true">◆</span></a>
     <ul>
       <li><a href="#work">work</a></li>
+      <li><a href="#achievements">achievements</a></li>
       <li><a href="#process">process</a></li>
       <li><a href="#skills">skills</a></li>
       <li><a href="#about">about</a></li>
@@ -76,11 +77,11 @@
     <span class="s12"><svg class="ic"><use href="#i-trophy"/></svg></span>
   </div>
   <p class="eyebrow"><svg class="ic ic-xs"><use href="#i-spark"/></svg> Singapore · available Jan — May 2027</p>
-  <h1>hi, i'm kevin.<br><span class="muted-h1">i turn messy data into systems <u>people can use</u>.</span></h1>
+  <h1>hi, i'm kevin.<br><span class="muted-h1">i work on machine learning systems, from raw data to <u>something usable</u>.</span></h1>
   <div class="lede">
     <p>I'm a Mathematical and Computer Sciences undergraduate at NTU Singapore, graduating 2028. I've built a World Cup prediction engine, a study platform that cites its sources, an NLP pipeline at MINDEF, a voice agent that runs interviews, and a risk engine for traffic cameras. Two of them are live and used by people who aren't me.</p>
     <p>Most of my work sits where statistics meets shipped software: models that emit probabilities, systems that survive the failure cases, and numbers I can defend when someone asks where they came from.</p>
-    <p><b>What I'm looking for:</b> data science, machine learning and applied&nbsp;AI internships in Singapore, available <b>January to May 2027</b> — the kind where I own a problem end to end rather than a ticket at a time.</p>
+    <p><b>What I'm looking for:</b> internships in Singapore across <b>data science, data engineering, machine learning or AI engineering</b> — available <b>January to May 2027</b>. The pipeline work and the modelling work are the same job to me; I'd rather own a problem end to end than a ticket at a time.</p>
   </div>
   <p class="hero-links">
     <a class="pill pill-solid" href="#work">see my work<span aria-hidden="true"> ↓</span></a>
@@ -112,17 +113,18 @@
   <div class="inner">
     <header class="band-head reveal">
       <h2>selected work<svg class="doodle" aria-hidden="true"><use href="#i-spark"/></svg></h2>
-      <p class="band-note">Six projects, each written up the same way: the problem, how I thought about it, what came out, and what I'd do differently. Not a gallery — the reasoning is the point.</p>
+      <p class="band-note">Five projects, each written up the same way: the problem, how I thought about it, what came out, and what I'd do differently. Not a gallery — the reasoning is the point.</p>
     </header>
 
     <!-- 1 -->
+    <h3 class="grouplabel">internship projects &mdash; MINDEF Singapore</h3>
     <article class="proj reveal spot">
       <div class="proj-head">
         <span class="pico" aria-hidden="true"><svg class="ic"><use href="#i-net"/></svg></span>
         <span class="idx" aria-hidden="true">01</span>
         <div>
-          <h3>National Service Sentiment Analysis</h3>
-          <p class="proj-sub">Built during a 10-week Data Science (NLP) internship at MINDEF Singapore · May — Jul 2026</p>
+          <h3>NS Sentinel</h3>
+          <p class="proj-sub">Main internship project · May — Jul 2026</p>
         </div>
       </div>
       <p class="proj-desc">A nine-stage NLP pipeline and seven-page dashboard measuring how Singaporeans actually talk about National Service, plus a retrieval chatbot that answers questions over the whole corpus.</p>
@@ -144,12 +146,39 @@
       </dl>
       <p class="proj-links"><a href="https://github.com/kevinn-chan/NS-Sentiment-Analysis-NLP">repository<span aria-hidden="true"> ↗</span></a></p>
     </article>
+    <article class="proj reveal spot">
+      <div class="proj-head">
+        <span class="pico" aria-hidden="true"><svg class="ic"><use href="#i-mic"/></svg></span>
+        <span class="idx" aria-hidden="true">02</span>
+        <div>
+          <h3>AI Sentiment Interview Caller <span class="badge badge-quiet">prototype</span></h3>
+          <p class="proj-sub">Built in the final two weeks of the internship · Jun — Jul 2026</p>
+        </div>
+      </div>
+      <p class="proj-desc">A voice agent that conducts structured sentiment interviews over the phone or in a browser, transcribing, analysing and redacting as it goes.</p>
+      <dl class="story">
+        <dt>the problem</dt>
+        <dd>Survey text boxes produce shallow answers. A human interviewer gets depth but doesn't scale, and the recordings then need transcribing and coding by hand. I finished my main internship project with two weeks left and wanted to see whether the depth could be automated without losing the conversation.</dd>
 
-    <!-- 2 -->
+        <dt>how i approached it</dt>
+        <dd>I built it as a streaming pipeline rather than a request-response loop, because turn latency is the difference between a voice agent that feels alive and one that feels broken — speech in, Groq for reasoning, Azure Neural streaming back out, orchestrated on Pipecat. The parts that took longest weren't the model: confidence-gated transcription so silence isn't scored as an answer, an idle watchdog that reminds and then hangs up, consent verification before anything is recorded, and NRIC, phone and email scrubbed from every transcript.</dd>
+
+        <dt>tools</dt>
+        <dd class="stack"><span>Python</span><span>FastAPI</span><span>Pipecat</span><span>Whisper</span><span>Groq Llama 3.3</span><span>Azure Neural TTS</span><span>Twilio</span><span>SQLite</span></dd>
+
+        <dt>result</dt>
+        <dd>0.2–0.9s from the end of a caller's sentence to the start of a reply, with ~200–300ms TTS streaming latency. Adaptive follow-ups fire only on strongly-held opinions. Graceful barge-in, automatic language switching, live SSE stream to an admin dashboard. Prototype on a free tier — around ten full interviews a day.</dd>
+
+        <dt>what i learned</dt>
+        <dd>Most of the engineering in a conversational system lives in the failure cases — silence, interruption, someone walking away mid-call. The model was the easy part. I also learned to build the privacy handling first instead of bolting it on, because redacting after the fact means the raw data already exists somewhere.</dd>
+      </dl>
+      <p class="proj-links"><a href="https://github.com/kevinn-chan/ai-questionnaire-caller">repository<span aria-hidden="true"> ↗</span></a></p>
+    </article>
+    <h3 class="grouplabel">personal projects</h3>
     <article class="proj reveal spot">
       <div class="proj-head">
         <span class="pico" aria-hidden="true"><svg class="ic"><use href="#i-ball"/></svg></span>
-        <span class="idx" aria-hidden="true">02</span>
+        <span class="idx" aria-hidden="true">03</span>
         <div>
           <h3>Joga Bonito <span class="badge">live</span></h3>
           <p class="proj-sub">World Cup 2026 prediction engine · used by public visitors</p>
@@ -174,12 +203,10 @@
       </dl>
       <p class="proj-links"><a href="https://kevinknowsball.vercel.app">live site<span aria-hidden="true"> ↗</span></a><a href="https://github.com/kevinn-chan/kevinknowsball">repository<span aria-hidden="true"> ↗</span></a></p>
     </article>
-
-    <!-- 3 -->
     <article class="proj reveal spot">
       <div class="proj-head">
         <span class="pico" aria-hidden="true"><svg class="ic"><use href="#i-book"/></svg></span>
-        <span class="idx" aria-hidden="true">03</span>
+        <span class="idx" aria-hidden="true">04</span>
         <div>
           <h3>Valedictorian Run <span class="badge">live</span></h3>
           <p class="proj-sub">Study platform with cited answers · live on Vercel</p>
@@ -204,12 +231,10 @@
       </dl>
       <p class="proj-links"><a href="https://valedictorian-run.vercel.app">live site<span aria-hidden="true"> ↗</span></a><a href="https://github.com/kevinn-chan/Valedictorian-Run-Demo">repository<span aria-hidden="true"> ↗</span></a></p>
     </article>
-
-    <!-- 4 -->
     <article class="proj reveal spot">
       <div class="proj-head">
         <span class="pico" aria-hidden="true"><svg class="ic"><use href="#i-risk"/></svg></span>
-        <span class="idx" aria-hidden="true">04</span>
+        <span class="idx" aria-hidden="true">05</span>
         <div>
           <h3>Context Aware Risk Engine <span class="badge badge-quiet">prototype</span></h3>
           <p class="proj-sub">Traffic accident detection under changing conditions · Feb — Mar 2026</p>
@@ -235,41 +260,20 @@
       <p class="proj-links"><a href="https://github.com/kevinn-chan/CARE">repository<span aria-hidden="true"> ↗</span></a></p>
     </article>
 
-    <!-- 5 -->
-    <article class="proj reveal spot">
-      <div class="proj-head">
-        <span class="pico" aria-hidden="true"><svg class="ic"><use href="#i-mic"/></svg></span>
-        <span class="idx" aria-hidden="true">05</span>
-        <div>
-          <h3>Bobina <span class="badge badge-quiet">prototype</span></h3>
-          <p class="proj-sub">Conversational voice agent for sentiment interviews · built at MINDEF</p>
-        </div>
-      </div>
-      <p class="proj-desc">A voice agent that conducts structured sentiment interviews over the phone or in a browser, transcribing, analysing and redacting as it goes.</p>
-      <dl class="story">
-        <dt>the problem</dt>
-        <dd>Survey text boxes produce shallow answers. A human interviewer gets depth but doesn't scale, and the recordings then need transcribing and coding by hand. I finished my main internship project with two weeks left and wanted to see whether the depth could be automated without losing the conversation.</dd>
+  </div>
+</section>
 
-        <dt>how i approached it</dt>
-        <dd>I built it as a streaming pipeline rather than a request-response loop, because turn latency is the difference between a voice agent that feels alive and one that feels broken — speech in, Groq for reasoning, Azure Neural streaming back out, orchestrated on Pipecat. The parts that took longest weren't the model: confidence-gated transcription so silence isn't scored as an answer, an idle watchdog that reminds and then hangs up, consent verification before anything is recorded, and NRIC, phone and email scrubbed from every transcript.</dd>
-
-        <dt>tools</dt>
-        <dd class="stack"><span>Python</span><span>FastAPI</span><span>Pipecat</span><span>Whisper</span><span>Groq Llama 3.3</span><span>Azure Neural TTS</span><span>Twilio</span><span>SQLite</span></dd>
-
-        <dt>result</dt>
-        <dd>0.2–0.9s from the end of a caller's sentence to the start of a reply, with ~200–300ms TTS streaming latency. Adaptive follow-ups fire only on strongly-held opinions. Graceful barge-in, automatic language switching, live SSE stream to an admin dashboard. Prototype on a free tier — around ten full interviews a day.</dd>
-
-        <dt>what i learned</dt>
-        <dd>Most of the engineering in a conversational system lives in the failure cases — silence, interruption, someone walking away mid-call. The model was the easy part. I also learned to build the privacy handling first instead of bolting it on, because redacting after the fact means the raw data already exists somewhere.</dd>
-      </dl>
-      <p class="proj-links"><a href="https://github.com/kevinn-chan/ai-questionnaire-caller">repository<span aria-hidden="true"> ↗</span></a></p>
-    </article>
-
-    <!-- 6 -->
+<!-- ══════════════ ACHIEVEMENTS ══════════════ -->
+<section id="achievements" class="band sunk">
+  <div class="wave" aria-hidden="true"><svg viewBox="0 0 1440 56" preserveAspectRatio="none"><path d="M0,26 C240,54 420,2 720,14 C1010,26 1200,52 1440,20 L1440,56 L0,56 Z"/></svg></div>
+  <div class="inner">
+    <header class="band-head reveal">
+      <h2>achievements<svg class="doodle" aria-hidden="true"><use href="#i-spark"/></svg></h2>
+      <p class="band-note">Competition work — same write-up, different pressure: a fixed deadline, a hard compute budget, and no second attempt.</p>
+    </header>
     <article class="proj reveal spot">
       <div class="proj-head">
         <span class="pico" aria-hidden="true"><svg class="ic"><use href="#i-trophy"/></svg></span>
-        <span class="idx" aria-hidden="true">06</span>
         <div>
           <h3>DSTA BrainHack TIL-AI <span class="badge">finalist</span></h3>
           <p class="proj-sub">Six AI challenge tracks, two people · Advanced Track Finalist, 2026</p>
@@ -294,7 +298,6 @@
       </dl>
       <p class="proj-links"><a href="https://github.com/meganchuaa/kteam-TIL_AI-BrainHack-2026">repository<span aria-hidden="true"> ↗</span></a></p>
     </article>
-
   </div>
 </section>
 
@@ -316,12 +319,12 @@
       <li class="reveal">
         <span class="step" aria-hidden="true"><svg class="ic"><use href="#i-build"/></svg>02</span>
         <h3>build — thinnest end-to-end path, then attack the weakest stage</h3>
-        <p>I'd rather have an ugly pipeline where all nine stages run than three perfect ones and a gap. Once it runs end to end, the bottleneck tells you where to spend time instead of you guessing. Then I look for components that can be <em>deleted</em> rather than optimised — Valedictorian Run has no vector database and the NS chatbot's query router makes no model call, both because the version without them was simpler and measurably better.</p>
+        <p>I'd rather have an ugly pipeline where all nine stages run than three perfect ones and a gap. Once it runs end to end, the bottleneck tells you where to spend time instead of you guessing. Then I look for components that can be <em>deleted</em> rather than optimised — Valedictorian Run has no vector database and NS Sentinel's query router makes no model call, both because the version without them was simpler and measurably better.</p>
       </li>
       <li class="reveal">
         <span class="step" aria-hidden="true"><svg class="ic"><use href="#i-loop"/></svg>03</span>
         <h3>feedback — keep versions, not tweaks; find the failure before a user does</h3>
-        <p>Every significant change becomes a numbered version with a stated hypothesis, so an improvement can be traced to a cause. Sixteen versions of the BrainHack agent is what turned iteration into evidence. In parallel I build the thing that tries to break it early: CARE's stress testbench and Bobina's idle-then-hang-up handling both existed before either project had a usable interface.</p>
+        <p>Every significant change becomes a numbered version with a stated hypothesis, so an improvement can be traced to a cause. Sixteen versions of the BrainHack agent is what turned iteration into evidence. In parallel I build the thing that tries to break it early: CARE's stress testbench and the interview caller's idle-then-hang-up handling both existed before either project had a usable interface.</p>
       </li>
     </ol>
   </div>
@@ -412,7 +415,7 @@
 <section id="contact" class="band">
   <div class="inner narrow">
     <h2>get in touch<svg class="doodle" aria-hidden="true"><use href="#i-spark"/></svg></h2>
-    <p class="band-note">Open to data science, ML and applied AI internships in Singapore, available January to May 2027 — and always happy to talk about evaluation design, or why your RAG pipeline might not need to be a RAG pipeline.</p>
+    <p class="band-note">Open to data science, data engineering, ML and AI engineering internships in Singapore, available January to May 2027 — and always happy to talk about evaluation design, or why your RAG pipeline might not need to be a RAG pipeline.</p>
 
     <ul class="contacts reveal stagger">
       <li>
@@ -448,6 +451,6 @@
   <p>kevin chan · singapore · <span id="year">2026</span></p>
 </footer>
 
-<script src="main.js?v=12"></script>
+<script src="main.js?v=16"></script>
 </body>
 </html>

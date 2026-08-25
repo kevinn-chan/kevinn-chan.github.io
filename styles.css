@@ -620,3 +620,16 @@ footer p {
   }
   .spot::before { display: none; }
 }
+
+/* ── group labels inside selected work ───────────────────── */
+.grouplabel {
+  font-family: var(--mono); font-size: 0.75rem; font-weight: 500;
+  letter-spacing: .12em; text-transform: uppercase;
+  color: var(--accent);
+  margin: clamp(2.6rem, 5vw, 3.6rem) 0 1.6rem;
+  padding-bottom: .7rem;
+  border-bottom: 1px solid var(--rule);
+}
+.grouplabel:first-of-type { margin-top: 0; }
+/* the label is already the separator — don't double up with the article rule */
+.grouplabel + .proj { border-top: 0; margin-top: 0; padding-top: 0; }
